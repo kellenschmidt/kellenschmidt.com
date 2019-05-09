@@ -13,18 +13,42 @@ const theme = {
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: Gilroy;
-    src: url(Gilroy-ExtraBold.otf);
-    font-weight: bold;
+    src: url(Gilroy-Light.otf);
+    font-weight: 300;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(Gilroy-Light.otf);
-    font-weight: normal;
+    src: url(Gilroy-Regular.ttf);
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: Gilroy;
+    src: url(Gilroy-Medium.ttf);
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: Gilroy;
+    src: url(Gilroy-SemiBold.otf);
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: Gilroy;
+    src: url(Gilroy-Bold.ttf);
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: Gilroy;
+    src: url(Gilroy-ExtraBold.otf);
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: Gilroy;
+    src: url(Gilroy-Heavy.ttf);
+    font-weight: 900;
   }
 
   body {
     font-family: Gilroy;
-    overflow: hidden;
   }
 `;
 

@@ -10,4 +10,3 @@ LICENSE
 # This should contain all files created during `yarn build`.
 build
 node_modules
-docs
