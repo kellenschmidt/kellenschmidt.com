@@ -7,10 +7,33 @@ import AppRouter from './components/AppRouter/AppRouter'
 import { createGlobalStyle } from 'styled-components'
 
 const theme = {
-
+  color: {
+    blue: {
+      normal: "#4595ec",
+      light: "#2dc5ef",
+    },
+    orange: {
+      normal: "#ef6f2d",
+      light: "#efc200",
+    },
+    salmon: {
+      normal: "#ec5d55",
+      light: "#f29c61",
+    },
+  },
 }
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: Gilroy;
+    src: url(Gilroy-Thin.otf);
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: Gilroy;
+    src: url(Gilroy-UltraLight.otf);
+    font-weight: 200;
+  }
   @font-face {
     font-family: Gilroy;
     src: url(Gilroy-Light.otf);
