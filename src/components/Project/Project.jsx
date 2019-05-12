@@ -10,7 +10,7 @@ const BigRow = styled(Row)`
   display: flex;
   margin-bottom: 15rem;
 `
-const PrimaryButton = styled.button`
+export const PrimaryButton = styled.button`
   padding: 12px 28px;
   border-radius: 8px;
   color: white;
@@ -29,7 +29,7 @@ const PrimaryButton = styled.button`
     box-shadow: 0 0 10px 2px ${theme.color[color].light};
   `}
 `
-const SecondaryButton = styled.button`
+export const SecondaryButton = styled.button`
   padding: 12px 28px;
   border-radius: 8px;
   background-color: white;
@@ -42,21 +42,21 @@ const SecondaryButton = styled.button`
     transform: scale(1.1);
   }
 `
-const TitleSuper = styled.p`
+export const TitleSuper = styled.p`
   font-weight: 600;
   color: rgba(48,53,70,.75);
   font-size: 1.625rem;
   margin: 15px 0;
   line-height: 26px;
 `
-const Title = styled.p`
+export const Title = styled.p`
   font-weight: 700;
   color: hsla(226.36363636363637,18.64%,23.14%,1);
   font-size: ${({ hero }) => hero ? "2.875rem" : "2.625rem"};
   line-height: 50px;
   margin: 5px 0 15px;
 `
-const TitleSub = styled.p`
+export const TitleSub = styled.p`
   font-family: Muli;
   font-weight: 400;
   color: hsla(226.36363636363637,18.64%,23.14%,.7);
@@ -64,30 +64,29 @@ const TitleSub = styled.p`
   line-height: 24px;
   margin-bottom: 25px;
 `
-const Line = styled.div`
+export const Line = styled.div`
   width: 60px;
   height: 3px;
   background-color: ${({ color, theme }) => theme.color[color].normal};
   margin-bottom: 15px;
 `
-const Img = styled.img`
+export const MockImg = styled.img`
   width: ${({ hero }) => hero ? "220%" : "100%"};
 `
 
 function Project(props) {
   const delay = props.hero ? 500 : 0
-  console.log(props.id)
 
   return (
     <Element name={props.id}>
       <Container id={props.id}>
-        <BigRow hero={props.hero}>
+        <BigRow hero={props.hero ? 1 : 0}>
           <Col xs={{size: 6, order: props.reverse ? 2 : 1, offset: props.reverse ? 1 : 0}}>
             <Fade bottom delay={delay + 0}>
               <Line color={props.color}/>
               <TitleSuper>{props.superText}</TitleSuper>
             </Fade>
-            <Fade bottom delay={delay + 200}>
+            <Fade bottom opposite delay={delay + 200}>
               <Title hero={props.hero}>{props.titleText}.</Title>
             </Fade>
             <Fade bottom delay={delay + 400}>
@@ -102,7 +101,7 @@ function Project(props) {
           </Col>
           <Col xs={{size: props.hero ? 6 : 4, order: props.reverse ? 1 : 2, offset: props.hero ? 0 : 1}}>
             <Fade right={!props.reverse} left={props.reverse} delay={delay + 800} duration={1250}>
-              <Img src={props.image} alt="Project mockup" hero={props.hero} />
+              <MockImg src={props.image} alt="Project mockup" hero={props.hero} />
             </Fade>
           </Col>
         </BigRow>

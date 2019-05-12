@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+// import { Route, Switch, Redirect } from 'react-router-dom'
 import NotFound404Page from '../NotFound404Page/NotFound404Page'
 import Homepage from '../Homepage/Homepage';
 
@@ -24,13 +24,14 @@ function AppRouter(props) {
   
   return (
     <>
+      <Homepage/>
       {/* <Grid container justify="center" className={classes.containerSpacing}> */}
-        <Switch>
-          <Route path="/" component={Homepage} exact />
+        {/* <Switch> */}
+          {/* <Route path="/" component={Homepage} exact /> */}
           {/* <PrivateRoute path="/" component={ManagementUI} /> */}
           {/* <Redirect exact from="/" to={{ pathname: "/inquiry/home", state: props.location.state }}/> */}
-          <Route component={NotFound404Page} />
-        </Switch>
+          {/* <Route component={NotFound404Page} /> */}
+        {/* </Switch> */}
       {/* </Grid> */}
       {/* <InfoDialog open={dialog} onClose={handleClose} title="No internet connection" rightButton="Ok">
         <DialogContentText>

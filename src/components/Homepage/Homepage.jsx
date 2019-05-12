@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import Slide from 'react-reveal/Slide'
+import heroMock from '../../assets/hero2.png'
+import mockup2 from '../../assets/mockup2.png'
+import mockup3 from '../../assets/mockup3.png'
 import NavBar from '../NavBar/NavBar';
 import About from '../About/About';
 import Project from '../Project/Project';
-import mockup1 from '../../assets/mockup1.png'
-import mockup2 from '../../assets/mockup2.png'
-import mockup3 from '../../assets/mockup3.png'
+import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 
 const BlackBG = styled.div`
   background-color: black;
@@ -14,6 +15,9 @@ const BlackBG = styled.div`
 `
 const WhiteBG = styled.div`
   background-color: white;
+`
+const TallDiv = styled.div`
+  height: 50vh;
 `
 
 const heroProject = {
@@ -29,17 +33,17 @@ const heroProject = {
     text: "Contact",
     link: "",
   },
-  color: "salmon",
-  image: mockup1,
+  color: "pink",
+  image: heroMock,
   reverse: false,
 }
 
-const projects = [
+const mainProjects = [
   {
     key: "url-shortener",
     superText: "Angular 7 | GraphQL",
     titleText: "URL Shortener",
-    subText: "Take long URLs and compress them into short links which are easy to share, tweet, email! Created entirely from scratch and written in Angular 7.",
+    subText: "Take long URLs and compress them into short links which are easy to share, tweet, email! Created entirely from scratch as a personal project.",
     primaryButton: {
       text: "Visit",
       link: "",
@@ -80,10 +84,12 @@ function Homepage(props) {
           <Project hero {...heroProject} id={heroProject.key}/>
           <About />
           {
-            projects.map(project => (
+            mainProjects.map(project => (
               <Project {...project} id={project.key}/>
             ))
           }
+          <ProjectCarousel />
+          <TallDiv></TallDiv>
         </WhiteBG>
       </Slide>
     </BlackBG>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { BrowserRouter as Router } from 'react-router-dom'
+// import { BrowserRouter as Router } from 'react-router-dom'
 import store from './store/store'
 import AppRouter from './components/AppRouter/AppRouter'
 import { createGlobalStyle } from 'styled-components'
@@ -19,6 +19,22 @@ const theme = {
     salmon: {
       normal: "#ec5d55",
       light: "#f29c61",
+    },
+    pink: {
+      normal: "#d859cf",
+      light: "#f08ed1",
+    },
+    green: {
+      normal: "#47992d",
+      light: "#6cdb80",
+    },
+    boldBlue: {
+      normal: "#304cb2",
+      light: "#304cb2",
+    },
+    cap1Red: {
+      normal: "#d03027",
+      light: "#d03027",
     },
   },
 }
@@ -81,9 +97,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <>
           <GlobalStyle/>
-          <Router>
+          {/* <Router> */}
             <AppRouter />
-          </Router>
+          {/* </Router> */}
         </>
       </ThemeProvider>
     </Provider>
