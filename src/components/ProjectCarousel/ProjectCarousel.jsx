@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Container, Row, Col } from 'reactstrap'
-import { TitleSuper, Title, TitleSub, SecondaryButton, MockImg } from '../Project/Project'
+import { TitleSuper, Title, TitleSub, SecondaryButton, MockImg, Line } from '../Project/Project'
 import Fade from 'react-reveal/Fade'
 import interactiveResumeMock from '../../assets/interactive-resume.png'
 import southwestAirlinesMock from '../../assets/southwest-airlines.png'
@@ -20,8 +20,10 @@ const MyCol = styled(Col)`
 const OuterRow = styled(Row)`
   align-items: baseline;
   display: flex;
-  margin-bottom: 15rem;
+  margin-bottom: ${({ isSelected}) => isSelected ? "30rem" : "5rem"};
   height: 50vh;
+  justify-content: between;
+  transition: margin-bottom 1s ease-in-out;
 `
 const ItemTitle = styled.p`
   margin: ${({ selected }) => selected ? "0" : "1rem 0"};
@@ -34,13 +36,16 @@ const LearnMoreDiv = styled.div`
   padding: 2rem 0 4rem;
   color: lightgrey;
 `
+const CenterLine = styled(Line)`
+  margin: auto;
+`
 
 const carouselProjects = [
   {
     key: "interactive-resume",
     superText: "Angular 7 | PHP",
     titleText: "Interactive Resume Website",
-    subText: "Previous version of my personal portfolio website to detail my background, describes my projects, characterizes my work experience, and depicts my skills.",
+    subText: "Previous version of my personal portfolio website to detail my background, describe my projects, characterize my work experience, and depict my skills.",
     primaryButton: {
       text: "Visit",
       link: "",
@@ -101,7 +106,7 @@ function ProjectCarousel() {
           </LearnMoreDiv>
         </Fade>
       </Fade>
-      <OuterRow className="d-flex justify-content-between">
+      <OuterRow isSelected={selected !== -1}>
         {
           carouselProjects.map((project, idx) => (
             <MyCol xs={selected === idx ? 8 : selected === -1 ? 4 : 2} onClick={() => setSelected(idx)} key={project.key}>
@@ -117,6 +122,7 @@ function ProjectCarousel() {
                   </MyCol>
                   <MyCol xs={selected === idx ? 12 : 0}>
                     <Fade opposite when={selected === idx} duration={300} delay={selected === idx ? 1000 : 0}>
+                      <CenterLine color={project.color}/>
                       <TitleSuper>{project.superText}</TitleSuper>
                       <Title>{project.titleText}.</Title>
                       <TitleSub>{project.subText}</TitleSub>

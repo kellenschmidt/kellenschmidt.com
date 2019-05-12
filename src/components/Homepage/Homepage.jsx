@@ -8,6 +8,7 @@ import NavBar from '../NavBar/NavBar';
 import About from '../About/About';
 import Project from '../Project/Project';
 import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
+import Education from '../Education/Education';
 
 const BlackBG = styled.div`
   background-color: black;
@@ -60,7 +61,7 @@ const mainProjects = [
     key: "compass-app",
     superText: "React | Redux | Express",
     titleText: "BakeMark Compass App",
-    subText: "Test",
+    subText: "Built a full-stack web application used daily by 200+ sales representatives nationwide to capture competitive product information and strategically analyze market position.",
     primaryButton: {
       text: "Visit",
       link: "",
@@ -89,7 +90,8 @@ function Homepage(props) {
             ))
           }
           <ProjectCarousel />
-          <TallDiv></TallDiv>
+          <Education/>
+          <TallDiv/>
         </WhiteBG>
       </Slide>
     </BlackBG>
