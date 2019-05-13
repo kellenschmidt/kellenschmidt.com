@@ -11,7 +11,7 @@ const ColorContainer = styled(Container)`
   background-image: ${({ color, theme }) => `linear-gradient(135deg, ${theme.color[color].normal}, ${theme.color[color].light})`};
   padding-top: 5rem;
   padding-bottom: 5rem;
-  margin: 25rem 0;
+  margin: 25rem 0 8rem;
 `
 const CenterRow = styled(Row)`
   justify-content: center

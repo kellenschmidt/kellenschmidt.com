@@ -8044,6 +8044,13 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-minesweeper@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-minesweeper/-/react-minesweeper-1.0.2.tgz#fc5a13fb45bab8bffcfece0e6acb10632c9ba745"
+  integrity sha512-J4t+GSzZ/uH4vp+xisevbA+0KlX4Pcz1SC0xApq7U4DLdyh4EopVTmaAUoaae/dJBqb0dkw1l/+mlaP+BOgDHQ==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-popper@^1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-1.3.3.tgz#2c6cef7515a991256b4f0536cd4bdcb58a7b6af6"

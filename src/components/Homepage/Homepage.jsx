@@ -10,6 +10,7 @@ import Project from '../Project/Project';
 import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 import Education from '../Education/Education';
 import Contact from '../Contact/Contact';
+import Footer from '../Footer/Footer';
 
 const BlackBG = styled.div`
   background-color: black;
@@ -17,9 +18,6 @@ const BlackBG = styled.div`
 `
 const WhiteBG = styled.div`
   background-color: white;
-`
-const TallDiv = styled.div`
-  height: 50vh;
 `
 
 const heroProject = {
@@ -93,7 +91,7 @@ function Homepage(props) {
           <ProjectCarousel />
           <Education/>
           <Contact/>
-          <TallDiv/>
+          <Footer/>
         </WhiteBG>
       </Slide>
     </BlackBG>
