@@ -9,6 +9,7 @@ import About from '../About/About';
 import Project from '../Project/Project';
 import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 import Education from '../Education/Education';
+import Contact from '../Contact/Contact';
 
 const BlackBG = styled.div`
   background-color: black;
@@ -91,6 +92,7 @@ function Homepage(props) {
           }
           <ProjectCarousel />
           <Education/>
+          <Contact/>
           <TallDiv/>
         </WhiteBG>
       </Slide>

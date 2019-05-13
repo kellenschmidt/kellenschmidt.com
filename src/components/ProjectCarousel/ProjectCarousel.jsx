@@ -20,7 +20,7 @@ const MyCol = styled(Col)`
 const OuterRow = styled(Row)`
   align-items: baseline;
   display: flex;
-  margin-bottom: ${({ isSelected}) => isSelected ? "30rem" : "5rem"};
+  margin-bottom: ${({ selected}) => selected ? "30rem" : "5rem"};
   height: 50vh;
   justify-content: between;
   transition: margin-bottom 1s ease-in-out;
@@ -106,7 +106,7 @@ function ProjectCarousel() {
           </LearnMoreDiv>
         </Fade>
       </Fade>
-      <OuterRow isSelected={selected !== -1}>
+      <OuterRow selected={selected !== -1}>
         {
           carouselProjects.map((project, idx) => (
             <MyCol xs={selected === idx ? 8 : selected === -1 ? 4 : 2} onClick={() => setSelected(idx)} key={project.key}>
