@@ -20,7 +20,7 @@ const theme = {
       normal: "#ec5d55",
       light: "#f29c61",
     },
-    pink: {
+    main: { //pink
       normal: "#d859cf",
       light: "#f08ed1",
     },

@@ -33,7 +33,7 @@ function Education() {
             <Triangle>
               <h2>Southern Methodist University</h2>
               <h2>B.S. Computer Science, 2019</h2>
-              <h2>GPA: 3.82</h2>
+              <h2>GPA: 3.81</h2>
             </Triangle>
           </Slide>
         </Wrapper>

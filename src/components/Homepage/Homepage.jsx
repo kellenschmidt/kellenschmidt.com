@@ -11,6 +11,8 @@ import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 import Education from '../Education/Education';
 import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
+import { Link } from 'react-scroll'
+import Skills from '../Skills/Skills';
 
 const BlackBG = styled.div`
   background-color: black;
@@ -27,13 +29,13 @@ const heroProject = {
   subText: "I'm a software engineer with a particular interest in full-stack web development. Check out my awesome projects and work experience!",
   primaryButton: {
     text: "Learn More",
-    link: "",
+    link: <Link to="about" smooth={true} duration={500} offset={-100}>Test</Link>,
   },
   secondaryButton: {
-    text: "Contact",
-    link: "",
+    text: "Resume",
+    link: "https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf",
   },
-  color: "pink",
+  color: "main",
   image: heroMock,
   reverse: false,
 }
@@ -89,7 +91,8 @@ function Homepage(props) {
             ))
           }
           <ProjectCarousel />
-          <Education/>
+          <Education />
+          <Skills />
           <Contact/>
           <Footer/>
         </WhiteBG>
