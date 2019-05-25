@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled, {withTheme} from 'styled-components'
+import styled from 'styled-components'
 import { Container } from 'reactstrap'
 import { Element } from 'react-scroll'
 import SkillGroup from './SkillGroup';
@@ -11,22 +11,27 @@ const skillGroups = [
       {
         name: "React",
         image: "react",
+        score: 90,
       },
       {
         name: "Angular",
         image: "angular",
+        score: 70,
       },
       {
         name: "Vue",
         image: "vuejs",
+        score: 50,
       },
       {
-        name: "HTML",
-        image: "html5",
+        name: "Redux",
+        image: "redux",
+        score: 80,
       },
       {
-        name: "CSS",
-        image: "css3",
+        name: "Javascript ES6+",
+        image: "javascript",
+        score: 75,
       },
     ],
   },
@@ -34,27 +39,80 @@ const skillGroups = [
     title: "Backend Web Dev",
     skills: [
       {
-        name: "React",
-        image: "",
-      }
+        name: "GraphQL",
+        image: "graphql",
+        score: 90,
+      },
+      {
+        name: "Node.js",
+        image: "nodejs",
+        score: 90,
+      },
+      {
+        name: "Express",
+        image: "express",
+        score: 90,
+      },
+      {
+        name: "MySQL",
+        image: "sql",
+        score: 90,
+      },
+      {
+        name: "Mongo",
+        image: "mongodb",
+        score: 90,
+      },
     ],
   },
   {
     title: "Dev Ops",
     skills: [
       {
-        name: "React",
-        image: "",
-      }
+        name: "Docker",
+        image: "docker",
+        score: 90,
+      },
+      {
+        name: "Kubernetes",
+        image: "kubernetes",
+        score: 90,
+      },
+      {
+        name: "AWS/GCP/Azure",
+        image: "aws",
+        score: 90,
+      },
+      {
+        name: "CI/CD",
+        image: "cicd",
+        score: 90,
+      },
     ],
   },
   {
     title: "Other",
     skills: [
       {
-        name: "React",
-        image: "",
-      }
+        name: "Python/C++/Java",
+        image: "python",
+        score: 90,
+      },
+      {
+        name: "Github",
+        image: "github",
+        score: 90,
+      },
+      {
+        name: "Scrum",
+        image: "scrum",
+        score: 90,
+      },
+      {
+        name: "Bash",
+        image: "bash",
+        score: 90,
+      },
     ],
   },
 ]
@@ -94,4 +152,4 @@ function Skills(props) {
   );
 }
 
-export default withTheme(Skills);
+export default Skills;
