@@ -21,6 +21,7 @@ const theme = {
       light: "#f29c61",
     },
     main: { //pink
+      dark: "#72006a", // #950051, __, #8c0e8f, #a5279d
       normal: "#d859cf",
       light: "#f08ed1",
     },

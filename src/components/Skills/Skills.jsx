@@ -10,8 +10,24 @@ const skillGroups = [
     skills: [
       {
         name: "React",
-        image: "",
-      }
+        image: "react",
+      },
+      {
+        name: "Angular",
+        image: "angular",
+      },
+      {
+        name: "Vue",
+        image: "vuejs",
+      },
+      {
+        name: "HTML",
+        image: "html5",
+      },
+      {
+        name: "CSS",
+        image: "css3",
+      },
     ],
   },
   {

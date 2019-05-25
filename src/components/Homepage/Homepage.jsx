@@ -76,6 +76,32 @@ const mainProjects = [
     reverse: true,
   },
 ]
+const Wrapper = styled.div`
+  position: relative;
+  z-index: 1;
+`
+const Test = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 5rem;
+
+  position: relative;
+
+  background-color: white;
+  background-clip: padding-box;
+  border: solid .5rem transparent;
+  border-radius: 1rem;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -.5rem;
+    border-radius: inherit;
+    background: linear-gradient(to right, red, orange);
+  }
+`
 
 function Homepage(props) {
   return (
@@ -92,6 +118,9 @@ function Homepage(props) {
           }
           <ProjectCarousel />
           <Education />
+          <Wrapper>
+            <Test>This is a test <br /> Kellen</Test>
+          </Wrapper>
           <Skills />
           <Contact/>
           <Footer/>

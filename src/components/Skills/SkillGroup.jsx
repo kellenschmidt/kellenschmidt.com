@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import styled, { withTheme } from 'styled-components'
 import { useTransition, useSpring, useChain, config, animated } from 'react-spring'
+import { Container, Row, Col} from 'reactstrap'
 
 const data = [
   {
@@ -91,16 +92,17 @@ const data = [
 
 const SkillsBox = styled(animated.div)`
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(100px, 1fr));
-  grid-gap: 25px;
-  padding: 25px;
-  background: white;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
   will-change: width, height;
   width: 100%;
+  transition: transform 0.1s ease-in-out;
+
+  &:hover {
+    transform: ${({ open }) => open ? 'scale(1.0)' : 'scale(1.025)'};
+  }
 `
 
 const Item = styled(animated.div)`
@@ -111,15 +113,48 @@ const Item = styled(animated.div)`
   will-change: transform, opacity;
 `
 
+const Chip = styled.div`
+  display: inline-block;
+  font-size: 16px;
+  padding: 0 1rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  background-color: #d2d2d2;
+  color: black;
+  margin: 0 .5rem;
+`
+
+const ChipImg = styled.img`
+  float: left;
+  margin: 0 0.6em 0 -1em;
+  border-radius: 50%;
+  height: 2.5rem;
+`
+
+const SkillsCol = styled(Col)`
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
+
 function SkillGroup(props) {
   const { open, setOpen, skillData } = props;
+
+  const mainColor = props.theme.color.main.normal
+  const darkColor = props.theme.color.main.dark
+  // const gradientBg = `linear-gradient(to right, ${darkColor}, ${darkColor}, ${darkColor}, ${mainColor}, ${mainColor}, ${mainColor}, ${mainColor})`
+  const gradientBg = "white"
 
   const springRef = useRef()
   const spring = useSpring({
     ref: springRef,
     config: config.stiff,
-    from: { height: '20%', background: props.theme.color.main.normal, top: `${props.index * 26.25}%`, position: 'absolute' },
-    to: { height: open ? '100%' : '20%', background: open ? 'lightgray' : props.theme.color.main.normal, top: open ? '0%' : `${props.index * 26.25}%` }
+    from: { height: '20%', backgroundImage: gradientBg, top: `${props.index * 26.25}%`, position: 'absolute' },
+    to: { height: open ? '100%' : '20%', backgroundImage: open ? 'lightgray' : gradientBg, top: open ? '0%' : `${props.index * 26.25}%` }
   })
 
   const transRef = useRef()
@@ -135,16 +170,34 @@ function SkillGroup(props) {
   useChain(open ? [springRef, transRef] : [transRef, springRef], [0, open ? 0.1 : 0.6])
 
   return (
-    <SkillsBox style={{ ...spring, zIndex: props.high ? 2 : 1 }} onClick={setOpen}>
+    <>
+    {/* <SkillsBox style={{ ...spring, zIndex: props.high ? 2 : 1 }} onClick={setOpen} open={open}>
       {transitions.map(({ item, key, props }) => (
         <Item key={key} style={{ ...props, background: item.css }} />
       ))}
       {
         !open && (
-          <h1>{skillData.title}</h1>
+          <Container>
+            <Row>
+              <Col xs={6}>
+                <h1 className="m-0">{skillData.title}</h1>
+              </Col>
+              <SkillsCol xs={6}>
+                {
+                  skillData.skills.map(skill => (
+                    <Chip key={skill.name}>
+                      <ChipImg src={`https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_120/${skill.image}-chip`}/>
+                      {skill.name}
+                    </Chip>
+                  ))
+                }
+              </SkillsCol>
+            </Row>
+          </Container>
         )
       }
-    </SkillsBox>
+    </SkillsBox> */}
+    </>
   );
 }
 
