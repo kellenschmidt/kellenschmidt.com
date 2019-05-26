@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Container } from 'reactstrap'
 import { Element } from 'react-scroll'
-import SkillGroup from './SkillGroup';
+import SkillGroup from './SkillGroup'
 
 const skillGroups = [
   {
