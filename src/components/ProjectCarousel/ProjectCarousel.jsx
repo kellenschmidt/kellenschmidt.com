@@ -3,9 +3,6 @@ import styled from 'styled-components'
 import { Container, Row, Col } from 'reactstrap'
 import { TitleSuper, Title, TitleSub, SecondaryButton, MockImg, Line } from '../Project/Project'
 import Fade from 'react-reveal/Fade'
-import interactiveResumeMock from '../../assets/interactive-resume.png'
-import southwestAirlinesMock from '../../assets/southwest-airlines.png'
-import capitalOneMock from '../../assets/capital-one.png'
 
 const GrowHover = styled.div`
   transition: transform 0.1s ease-in-out;
@@ -40,61 +37,7 @@ const CenterLine = styled(Line)`
   margin: auto;
 `
 
-const carouselProjects = [
-  {
-    key: "interactive-resume",
-    superText: "Angular 7 | PHP",
-    titleText: "Interactive Resume Website",
-    subText: "Previous version of my personal portfolio website to detail my background, describe my projects, characterize my work experience, and depict my skills.",
-    primaryButton: {
-      text: "Visit",
-      link: "",
-    },
-    secondaryButton: {
-      text: "More Info",
-      link: "",
-    },
-    color: "green",
-    image: interactiveResumeMock,
-    reverse: true,
-  },
-  {
-    key: "southwest-airlines",
-    superText: "Software Engineer Intern, Spring 2018",
-    titleText: "Southwest Airlines",
-    subText: "Developed a React web application for a backend software team to analyze the quality of terabytes of data every night and graph relevant statistics for use by business analysts and operations teams.",
-    primaryButton: {
-      text: "Visit",
-      link: "",
-    },
-    secondaryButton: {
-      text: "More Info",
-      link: "",
-    },
-    color: "boldBlue",
-    image: southwestAirlinesMock,
-    reverse: true,
-  },
-  {
-    key: "capital-one",
-    superText: "Software Engineer Intern, Summer 2018",
-    titleText: "Capital One",
-    subText: "Implemented an Angular web application with a Java Spring backend consuming from Kafka and Cassandra cloud instances to display a customer's email communication history to call center agents.",
-    primaryButton: {
-      text: "Visit",
-      link: "",
-    },
-    secondaryButton: {
-      text: "More Info",
-      link: "",
-    },
-    color: "cap1Red",
-    image: capitalOneMock,
-    reverse: true,
-  },
-]
-
-function ProjectCarousel() {
+function ProjectCarousel(props) {
   const [selected, setSelected] = useState(-1)
   
   return (
@@ -108,7 +51,7 @@ function ProjectCarousel() {
       </Fade>
       <OuterRow selected={selected !== -1}>
         {
-          carouselProjects.map((project, idx) => (
+          props.projects.map((project, idx) => (
             <MyCol xs={selected === idx ? 8 : selected === -1 ? 4 : 2} onClick={() => setSelected(idx)} key={project.key}>
               <Fade bottom delay={idx * 200}>
                 <Row>

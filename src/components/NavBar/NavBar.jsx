@@ -4,7 +4,7 @@ import KSLogo from '../../assets/ks-logo.png'
 import { Link } from 'react-scroll'
 import { Container, Row } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
-import { SmallOrMedium, Large } from '../../responsiveTags'
+import { MediumAndBelow, Large } from '../../responsiveTags'
 import { MdMenu } from "react-icons/md";
 import { useSpring, animated } from 'react-spring'
 
@@ -61,17 +61,21 @@ const NavToggle = styled.h2`
 
 function NavBar(props) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
-  const spring = useSpring({width: mobileNavOpen ? "100vw" : "0vw", from: {width: "0vw"}})
+  const spring = useSpring({ width: mobileNavOpen ? "100vw" : "0vw", from: { width: "0vw" } })
+  
+  const toggleNav = () => {
+    setMobileNavOpen(!mobileNavOpen)
+  }
 
   return (
     <>
-      <MobileNav open={mobileNavOpen} onClick={() => setMobileNavOpen(false)} style={spring}>
+      <MobileNav open={mobileNavOpen} onClick={toggleNav} style={spring}>
         <Fade when={mobileNavOpen} opposite delay={mobileNavOpen ? 500 : 0} duration={500}>
-          <MobileNavLink to="about" smooth={true} duration={500} offset={-100} style={{textDecoration: 'underline'}}>About</MobileNavLink>
-          <MobileNavLink to="url-shortener" smooth={true} duration={500} offset={-100}>Experience / Projects</MobileNavLink>
-          <MobileNavLink to="education" smooth={true} duration={500}>Education</MobileNavLink>
-          <MobileNavLink to="skills" smooth={true} duration={500}>Skills</MobileNavLink>
-          <MobileNavLink to="contact" smooth={true} duration={500}>Contact</MobileNavLink>
+          <MobileNavLink to="about" smooth={true} duration={500} offset={-100} onClick={toggleNav} style={{textDecoration: 'underline'}}>About</MobileNavLink>
+          <MobileNavLink to="url-shortener" smooth={true} duration={500} offset={-100} onClick={toggleNav}>Experience / Projects</MobileNavLink>
+          <MobileNavLink to="education" smooth={true} duration={500} onClick={toggleNav}>Education</MobileNavLink>
+          <MobileNavLink to="skills" smooth={true} duration={500} onClick={toggleNav}>Skills</MobileNavLink>
+          <MobileNavLink to="contact" smooth={true} duration={500} onClick={toggleNav}>Contact</MobileNavLink>
         </Fade>
       </MobileNav>
       <Container>
@@ -87,9 +91,9 @@ function NavBar(props) {
                 <NavLink to="skills" smooth={true} duration={500}>Skills</NavLink>
                 <NavLink to="contact" smooth={true} duration={500}>Contact</NavLink>
               </Large>
-              <SmallOrMedium>
-                <NavToggle onClick={() => setMobileNavOpen(!mobileNavOpen)}><MdMenu/></NavToggle>
-              </SmallOrMedium>
+              <MediumAndBelow>
+                <NavToggle onClick={toggleNav}><MdMenu/></NavToggle>
+              </MediumAndBelow>
             </div>
           </Fade>
         </HeaderRow>

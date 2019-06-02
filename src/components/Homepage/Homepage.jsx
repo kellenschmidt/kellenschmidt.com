@@ -13,6 +13,10 @@ import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 import { Link } from 'react-scroll'
 import Skills from '../Skills/Skills';
+import { MediumAndAbove, Small } from '../../responsiveTags'
+import interactiveResumeMock from '../../assets/interactive-resume.png'
+import southwestAirlinesMock from '../../assets/southwest-airlines.png'
+import capitalOneMock from '../../assets/capital-one.png'
 
 const BlackBG = styled.div`
   background-color: black;
@@ -77,6 +81,60 @@ const mainProjects = [
   },
 ]
 
+const carouselProjects = [
+  {
+    key: "capital-one",
+    superText: "Software Engineer Intern, Summer 2018",
+    titleText: "Capital One",
+    subText: "Implemented an Angular web application with a Java Spring backend consuming from Kafka and Cassandra cloud instances to display a customer's email communication history to call center agents.",
+    primaryButton: {
+      text: "Visit",
+      link: "",
+    },
+    secondaryButton: {
+      text: "More Info",
+      link: "",
+    },
+    color: "cap1Red",
+    image: capitalOneMock,
+    reverse: true,
+  },
+  {
+    key: "southwest-airlines",
+    superText: "Software Engineer Intern, Spring 2018",
+    titleText: "Southwest Airlines",
+    subText: "Developed a React web application for a backend software team to analyze the quality of terabytes of data every night and graph relevant statistics for use by business analysts and operations teams.",
+    primaryButton: {
+      text: "Visit",
+      link: "",
+    },
+    secondaryButton: {
+      text: "More Info",
+      link: "",
+    },
+    color: "boldBlue",
+    image: southwestAirlinesMock,
+    reverse: true,
+  },
+  {
+    key: "interactive-resume",
+    superText: "Angular 7 | PHP",
+    titleText: "Interactive Resume Website",
+    subText: "Previous version of my personal portfolio website to detail my background, describe my projects, characterize my work experience, and depict my skills.",
+    primaryButton: {
+      text: "Visit",
+      link: "",
+    },
+    secondaryButton: {
+      text: "More Info",
+      link: "",
+    },
+    color: "green",
+    image: interactiveResumeMock,
+    reverse: true,
+  },
+]
+
 function Homepage(props) {
   return (
     <BlackBG>
@@ -90,7 +148,16 @@ function Homepage(props) {
               <Project {...project} id={project.key}/>
             ))
           }
-          <ProjectCarousel />
+          <Small>
+            {
+              carouselProjects.map(project => (
+                <Project {...project} id={project.key}/>
+              ))
+            }
+          </Small>
+          <MediumAndAbove>
+            <ProjectCarousel projects={carouselProjects}/>
+          </MediumAndAbove>
           <Education />
           <Skills />
           <Contact/>

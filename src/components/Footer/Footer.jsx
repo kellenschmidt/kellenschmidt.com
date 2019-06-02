@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'reactstrap'
 import Minesweeper from  'react-minesweeper'
 import "react-minesweeper/lib/minesweeper.css";
 import Tada from 'react-reveal/Tada';
+import { LargeAndAbove } from '../../responsiveTags'
 
 const FooterText = styled.a`
   display: block;
@@ -53,30 +54,32 @@ function Footer() {
     <Background>
       <Container>
         <Row>
-          <Col xs={5}>
+          <Col md={5} xs={6}>
             <FooterHeader>It's been real</FooterHeader>
             <FooterText>Thanks for visiting. Learn more about me and check out my work at these links!</FooterText>
           
           </Col>
-          <Col xs={{ size: 3, offset: 1 }}>
+          <Col md={{ size: 3, offset: 1 }} xs={6}>
             <FooterHeader>Links</FooterHeader>
             <FooterLink href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener">Resume</FooterLink>
             <FooterLink href="https://github.com/kellenschmidt" target="_blank" rel="noopener">GitHub</FooterLink>
             <FooterLink href="https://linkedin.com/in/kellens" target="_blank" rel="noopener">LinkedIn</FooterLink>
             <FooterLink href="https://kellenschmidt.com/url" target="_blank" rel="noopener">URL Shortener</FooterLink>
           </Col>
-          <Col xs={3} className="text-center">
-            <Tada spy={minesweeperTitle}>
-              <MinesweeperHeader onClick={resetMinesweeper}>{minesweeperTitle}</MinesweeperHeader>
-            </Tada>
-            <Minesweeper 
-              key={minesweeperKey}
-              onWin={() => setMinesweeperTitle("You win! (Click to reset)")}
-              onLose={() => setMinesweeperTitle("You lose! (Click to reset)")}
-              bombChance={0.15}
-              width={7}
-              height={6} />
-          </Col>
+          <LargeAndAbove>
+            <Col xs={3} className="text-center">
+              <Tada spy={minesweeperTitle}>
+                <MinesweeperHeader onClick={resetMinesweeper}>{minesweeperTitle}</MinesweeperHeader>
+              </Tada>
+              <Minesweeper 
+                key={minesweeperKey}
+                onWin={() => setMinesweeperTitle("You win! (Click to reset)")}
+                onLose={() => setMinesweeperTitle("You lose! (Click to reset)")}
+                bombChance={0.15}
+                width={7}
+                height={6} />
+            </Col>
+          </LargeAndAbove>
         </Row>
         <CopyrightRow>
           <Col xs={12}>

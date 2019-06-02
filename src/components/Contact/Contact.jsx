@@ -32,6 +32,10 @@ const Avatar = styled.a`
   &:hover {
     transform: scale(1.1);
   }
+
+  ${({ theme }) => theme.breakpoints.sm`
+    margin: .7rem;
+  `}
 `
 
 function Contact() {

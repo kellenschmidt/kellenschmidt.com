@@ -9,6 +9,10 @@ const BigRow = styled(Row)`
   align-items: center;
   display: flex;
   margin-bottom: 15rem;
+  
+  ${({ theme }) => theme.breakpoints.sm`
+    margin-bottom: 8rem;
+  `}
 `
 export const PrimaryButton = styled.button`
   padding: 12px 28px;
@@ -81,7 +85,7 @@ function Project(props) {
     <Element name={props.id}>
       <Container id={props.id}>
         <BigRow hero={props.hero ? 1 : 0}>
-          <Col xs={{size: 6, order: props.reverse ? 2 : 1, offset: props.reverse ? 1 : 0}}>
+          <Col xs={12} md={{size: 6, order: props.reverse ? 2 : 1, offset: props.reverse ? 1 : 0}}>
             <Fade bottom delay={delay + 0}>
               <Line color={props.color}/>
               <TitleSuper>{props.superText}</TitleSuper>
@@ -99,7 +103,7 @@ function Project(props) {
               </div>
             </Fade>
           </Col>
-          <Col xs={{size: props.hero ? 6 : 4, order: props.reverse ? 1 : 2, offset: props.hero ? 0 : 1}}>
+          <Col xs={{size: 8, offset: 2}} md={{size: props.hero ? 6 : 4, order: props.reverse ? 1 : 2, offset: props.hero ? 0 : 1}} className="mt-sm-5 mt-md-0">
             <Fade right={!props.reverse} left={props.reverse} delay={delay + 800} duration={1250}>
               <MockImg src={props.image} alt="Project mockup" hero={props.hero} />
             </Fade>
