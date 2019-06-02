@@ -35,6 +35,10 @@ const MinesweeperHeader = styled(FooterHeader)`
     cursor: pointer;
   }
 `
+const Background = styled.div`
+  background-color: rgba(48,53,70,.05);
+  padding-top: 8rem;
+`
 
 function Footer() {
   const [minesweeperKey, setMinesweeperKey] = useState(0)
@@ -46,39 +50,41 @@ function Footer() {
   }
 
   return (
-    <Container>
-      <Row>
-        <Col xs={5}>
-          <FooterHeader>It's been real</FooterHeader>
-          <FooterText>Thanks for visiting. Learn more about me and check out my work at these links!</FooterText>
-        
-        </Col>
-        <Col xs={{ size: 3, offset: 1 }}>
-          <FooterHeader>Links</FooterHeader>
-          <FooterLink href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener">Resume</FooterLink>
-          <FooterLink href="https://github.com/kellenschmidt" target="_blank" rel="noopener">GitHub</FooterLink>
-          <FooterLink href="https://linkedin.com/in/kellens" target="_blank" rel="noopener">LinkedIn</FooterLink>
-          <FooterLink href="https://kellenschmidt.com/url" target="_blank" rel="noopener">URL Shortener</FooterLink>
-        </Col>
-        <Col xs={3} className="text-center">
-          <Tada spy={minesweeperTitle}>
-            <MinesweeperHeader onClick={resetMinesweeper}>{minesweeperTitle}</MinesweeperHeader>
-          </Tada>
-          <Minesweeper 
-            key={minesweeperKey}
-            onWin={() => setMinesweeperTitle("You win! (Click to reset)")}
-            onLose={() => setMinesweeperTitle("You lose! (Click to reset)")}
-            bombChance={0.15}
-            width={7}
-            height={6} />
-        </Col>
-      </Row>
-      <CopyrightRow>
-        <Col xs={12}>
-          &copy; 2019 Kellen Schmidt<span className="mx-2">&#124;</span>Version: v0
-        </Col>
-      </CopyrightRow>
-    </Container>
+    <Background>
+      <Container>
+        <Row>
+          <Col xs={5}>
+            <FooterHeader>It's been real</FooterHeader>
+            <FooterText>Thanks for visiting. Learn more about me and check out my work at these links!</FooterText>
+          
+          </Col>
+          <Col xs={{ size: 3, offset: 1 }}>
+            <FooterHeader>Links</FooterHeader>
+            <FooterLink href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener">Resume</FooterLink>
+            <FooterLink href="https://github.com/kellenschmidt" target="_blank" rel="noopener">GitHub</FooterLink>
+            <FooterLink href="https://linkedin.com/in/kellens" target="_blank" rel="noopener">LinkedIn</FooterLink>
+            <FooterLink href="https://kellenschmidt.com/url" target="_blank" rel="noopener">URL Shortener</FooterLink>
+          </Col>
+          <Col xs={3} className="text-center">
+            <Tada spy={minesweeperTitle}>
+              <MinesweeperHeader onClick={resetMinesweeper}>{minesweeperTitle}</MinesweeperHeader>
+            </Tada>
+            <Minesweeper 
+              key={minesweeperKey}
+              onWin={() => setMinesweeperTitle("You win! (Click to reset)")}
+              onLose={() => setMinesweeperTitle("You lose! (Click to reset)")}
+              bombChance={0.15}
+              width={7}
+              height={6} />
+          </Col>
+        </Row>
+        <CopyrightRow>
+          <Col xs={12}>
+            &copy; 2019 Kellen Schmidt<span className="mx-2">&#124;</span>Version: v0
+          </Col>
+        </CopyrightRow>
+      </Container>
+    </Background>
   );
 }
 

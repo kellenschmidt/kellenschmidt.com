@@ -4,40 +4,60 @@ import { ThemeProvider } from 'styled-components'
 // import { BrowserRouter as Router } from 'react-router-dom'
 import store from './store/store'
 import AppRouter from './components/AppRouter/AppRouter'
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
+
+const colors = {
+  blue: {
+    normal: "#4595ec",
+    light: "#2dc5ef",
+  },
+  orange: {
+    normal: "#ef6f2d",
+    light: "#efc200",
+  },
+  salmon: {
+    normal: "#ec5d55",
+    light: "#f29c61",
+  },
+  pink: {
+    dark: "#72006a", // #950051, __, #8c0e8f, #a5279d
+    normal: "#d859cf",
+    light: "#f08ed1",
+  },
+  green: {
+    normal: "#47992d",
+    light: "#6cdb80",
+  },
+  boldBlue: {
+    normal: "#304cb2",
+    light: "#304cb2",
+  },
+  cap1Red: {
+    normal: "#d03027",
+    light: "#d03027",
+  },
+}
+
+const sizes = {
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200,
+}
 
 const theme = {
   color: {
-    blue: {
-      normal: "#4595ec",
-      light: "#2dc5ef",
-    },
-    orange: {
-      normal: "#ef6f2d",
-      light: "#efc200",
-    },
-    salmon: {
-      normal: "#ec5d55",
-      light: "#f29c61",
-    },
-    main: { //pink
-      dark: "#72006a", // #950051, __, #8c0e8f, #a5279d
-      normal: "#d859cf",
-      light: "#f08ed1",
-    },
-    green: {
-      normal: "#47992d",
-      light: "#6cdb80",
-    },
-    boldBlue: {
-      normal: "#304cb2",
-      light: "#304cb2",
-    },
-    cap1Red: {
-      normal: "#d03027",
-      light: "#d03027",
-    },
+    ...colors,
+    main: colors.pink,
   },
+  breakpoints: Object.keys(sizes).reduce((acc, label) => {
+    acc[label] = (...args) => css`
+    @media (max-width: ${sizes[label] / 16}em) {
+      ${css(...args)}
+    }
+  `
+    return acc
+  }, {}),
 }
 
 const GlobalStyle = createGlobalStyle`
