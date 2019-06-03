@@ -5,6 +5,7 @@ import Kellen from '../../assets/kellen.jpg'
 import KSLogo from '../../assets/ks-logo.png'
 import Fade from 'react-reveal/Fade'
 import { Element } from 'react-scroll'
+import { Title as TitleImp, TitleSub as TitleSubImp } from '../Project/Project'
 
 const Img = styled.img`
   width: 100%;
@@ -16,32 +17,38 @@ const Logo = styled.img`
   bottom: 0;
   right: 0;
 `
-const Title = styled.p`
-  font-weight: 700;
-  color: hsla(226.36363636363637,18.64%,23.14%,1);
-  font-size: 2.625rem;
-  line-height: 50px;
-  margin: 2rem 0 15px;
+const Title = styled(TitleImp)`
+  margin: 0 0 1rem;
   padding: 0 1rem;
+
+  ${({ theme }) => theme.breakpoints.sm`
+    font-size: 2rem;
+    line-height: 2.25rem;
+  `}
 `
-const TitleSub = styled.p`
-  font-family: Muli;
-  font-weight: 400;
-  color: hsla(226.36363636363637,18.64%,23.14%,.7);
-  font-size: 1.125rem;
-  line-height: 24px;
-  margin-bottom: 25px;
+const TitleSub = styled(TitleSubImp)`
   padding: 0 2rem;
+
+  ${({ theme }) => theme.breakpoints.md`
+    padding: 0rem;
+  `}
+  ${({ theme }) => theme.breakpoints.sm`
+    font-size: 1rem;
+    line-height: 1.375rem;
+  `}
 `
 const LastRow = styled(Row)`
   padding-bottom: 15rem;
+`
+const Highlight = styled.span`
+  color: ${({ theme }) => theme.color.main.normal}
 `
 
 function About(props) {
   return (
     <Element name="about">
       <Container className="text-center" id="about">
-        <Row>
+        {/* <Row>
           <Col xs={{ size: 2, offset: 5 }}>
             <Fade bottom delay={0}>
               <div className="position-relative">
@@ -50,11 +57,11 @@ function About(props) {
               </div>
             </Fade>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col xs={12}>
             <Fade bottom delay={200}>
-              <Title>I am a strong software developer with a passion for learning and a curiosity with technology.</Title>
+              <Title>I am a software developer with a <Highlight>passion</Highlight> for learning and a <Highlight>curiosity</Highlight> with technology.</Title>
             </Fade>
           </Col>
         </Row>

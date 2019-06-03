@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, createRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { Container, Row, Col } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
@@ -10,8 +10,10 @@ const BigRow = styled(Row)`
   display: flex;
   margin-bottom: 15rem;
   
-  ${({ theme }) => theme.breakpoints.sm`
+  ${({ theme, hero }) => theme.breakpoints.sm`
     margin-bottom: 8rem;
+    margin-top: ${hero ? "2rem" : "0"};
+    height: initial;
   `}
 `
 export const PrimaryButton = styled.button`
@@ -51,22 +53,37 @@ export const TitleSuper = styled.p`
   color: rgba(48,53,70,.75);
   font-size: 1.625rem;
   margin: 15px 0;
-  line-height: 26px;
+  line-height: 1.625rem;
+
+  ${({ theme }) => theme.breakpoints.sm`
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  `}
 `
 export const Title = styled.p`
   font-weight: 700;
   color: hsla(226.36363636363637,18.64%,23.14%,1);
   font-size: ${({ hero }) => hero ? "2.875rem" : "2.625rem"};
-  line-height: 50px;
+  line-height: 3.125rem;
   margin: 5px 0 15px;
+  
+  ${({ theme }) => theme.breakpoints.sm`
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+  `}
 `
 export const TitleSub = styled.p`
   font-family: Muli;
   font-weight: 400;
   color: hsla(226.36363636363637,18.64%,23.14%,.7);
   font-size: 1.125rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   margin-bottom: 25px;
+  
+  ${({ theme }) => theme.breakpoints.sm`
+    font-size: 1rem;
+    line-height: 1.375rem;
+  `}
 `
 export const Line = styled.div`
   width: 60px;
@@ -76,10 +93,23 @@ export const Line = styled.div`
 `
 export const MockImg = styled.img`
   width: ${({ hero }) => hero ? "220%" : "100%"};
+
+  ${({ theme }) => theme.breakpoints.md`
+    margin-top: 2.5rem;
+  `}
+  ${({ theme }) => theme.breakpoints.sm`
+    width: 100%;
+  `}
 `
 
 function Project(props) {
   const delay = props.hero ? 500 : 0
+  const imgRef = createRef()
+  const [verticalPhoto, setVerticalPhoto] = useState(true)
+
+  useEffect(() => {
+    setVerticalPhoto(imgRef.current.naturalHeight > imgRef.current.naturalWidth)
+  }, [imgRef])
 
   return (
     <Element name={props.id}>
@@ -103,9 +133,9 @@ function Project(props) {
               </div>
             </Fade>
           </Col>
-          <Col xs={{size: 8, offset: 2}} md={{size: props.hero ? 6 : 4, order: props.reverse ? 1 : 2, offset: props.hero ? 0 : 1}} className="mt-sm-5 mt-md-0">
+          <Col xs={{size: verticalPhoto ? 8 : 12, offset: verticalPhoto ? 2 : 0}} md={{size: props.hero ? 6 : 4, order: props.reverse ? 1 : 2, offset: props.hero ? 0 : 1}}>
             <Fade right={!props.reverse} left={props.reverse} delay={delay + 800} duration={1250}>
-              <MockImg src={props.image} alt="Project mockup" hero={props.hero} />
+              <MockImg src={props.image} alt="Project mockup" hero={props.hero} ref={imgRef}/>
             </Fade>
           </Col>
         </BigRow>
