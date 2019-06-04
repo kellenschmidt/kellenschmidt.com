@@ -67,9 +67,9 @@ function ProjectCarousel(props) {
                     <Fade opposite when={selected === idx} duration={300} delay={selected === idx ? 1000 : 0}>
                       <CenterLine color={project.color}/>
                       <TitleSuper>{project.superText}</TitleSuper>
-                      <Title>{project.titleText}.</Title>
+                      <Title>{project.titleText}</Title>
                       <TitleSub>{project.subText}</TitleSub>
-                      <SecondaryButton color={project.color}>More Info</SecondaryButton>
+                      <SecondaryButton color={project.color}>{project.primaryButton}</SecondaryButton>
                     </Fade>
                   </MyCol>
                 </Row>

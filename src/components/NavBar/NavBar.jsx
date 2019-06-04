@@ -93,14 +93,14 @@ function NavBar(props) {
     <>
       <MobileNav open={mobileNavOpen} onClick={toggleNav}>
         <Logo inverse/>
-        <MobileNavLink to="about" smooth={true} duration={500} offset={-120} onClick={toggleNav} style={{textDecoration: 'underline'}}>About</MobileNavLink>
+        <MobileNavLink to="about" smooth={true} duration={500} offset={-120} onClick={toggleNav}>About</MobileNavLink>
         <MobileNavLink to="url-shortener" smooth={true} duration={500} offset={-40} onClick={toggleNav}>Experience / Projects</MobileNavLink>
         <MobileNavLink to="education" smooth={true} duration={500} offset={-160} onClick={toggleNav}>Education</MobileNavLink>
         <MobileNavLink to="skills" smooth={true} duration={500} offset={-160} onClick={toggleNav}>Skills</MobileNavLink>
         <MobileNavLink to="contact" smooth={true} duration={500} offset={-160} onClick={toggleNav}>Contact</MobileNavLink>
         <ColorBar />
-        <Icon href="https://linkedin.com/in/kellens" target="_blank" rel="noopener"><FaLinkedin/></Icon>
-        <Icon href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener"><FaFilePdf/></Icon>
+        <Icon href="https://linkedin.com/in/kellens" target="_blank" rel="noopener noreferrer"><FaLinkedin/></Icon>
+        <Icon href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer"><FaFilePdf/></Icon>
       </MobileNav>
       <Container>
         <HeaderRow>

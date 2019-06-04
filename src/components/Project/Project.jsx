@@ -139,8 +139,8 @@ function Project(props) {
             </Fade>
             <Fade bottom delay={delay + 600}>
               <div>
-                <PrimaryButton color={props.color}>{props.primaryButton.text}</PrimaryButton>
-                <SecondaryButton color={props.color}>{props.secondaryButton.text}</SecondaryButton>
+                <PrimaryButton color={props.color}>{props.primaryButton}</PrimaryButton>
+                <SecondaryButton color={props.color}>{props.secondaryButton}</SecondaryButton>
               </div>
             </Fade>
           </Col>
