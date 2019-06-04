@@ -4,18 +4,16 @@ import { Container, Row, Col } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
 import { Element } from 'react-scroll'
 
-const BigRow = styled(Row)`
-  height: ${({ hero }) => hero ? "90vh" : "initial"};
+export const BigRow = styled(Row)`
   align-items: center;
   display: flex;
   margin-bottom: 15rem;
   
-  ${({ theme, hero }) => theme.breakpoints.md`
+  ${({ theme }) => theme.breakpoints.md`
     margin-bottom: 12rem;
-    margin-top: ${hero ? "2rem" : "0"};
   `}
   ${({ theme }) => theme.breakpoints.sm`
-    margin-bottom: 8rem;
+    margin-bottom: 11rem;
     height: initial;
   `}
 `
@@ -66,7 +64,7 @@ export const TitleSuper = styled.p`
 export const Title = styled.p`
   font-weight: 700;
   color: hsla(226.36363636363637,18.64%,23.14%,1);
-  font-size: ${({ hero }) => hero ? "2.875rem" : "2.625rem"};
+  font-size: 2.625rem;
   line-height: 3.125rem;
   margin: 5px 0 15px;
   
@@ -75,7 +73,7 @@ export const Title = styled.p`
     line-height: 2.25rem;
   `}
   ${({ theme }) => theme.breakpoints.sm`
-    font-size: 1.625rem;
+    font-size: 1.75rem;
     line-height: 1.875rem;
   `}
 `
@@ -103,18 +101,14 @@ export const Line = styled.div`
   margin-bottom: 1rem;
 `
 export const MockImg = styled.img`
-  width: ${({ hero }) => hero ? "220%" : "100%"};
+  width: 100%;
 
   ${({ theme }) => theme.breakpoints.md`
     margin-top: 2.5rem;
   `}
-  ${({ theme }) => theme.breakpoints.sm`
-    width: 100%;
-  `}
 `
 
 function Project(props) {
-  const delay = props.hero ? 500 : 0
   const imgRef = createRef()
   const [verticalPhoto, setVerticalPhoto] = useState(true)
 
@@ -125,28 +119,28 @@ function Project(props) {
   return (
     <Element name={props.id}>
       <Container id={props.id}>
-        <BigRow hero={props.hero ? 1 : 0}>
+        <BigRow>
           <Col xs={12} md={{size: 6, order: props.reverse ? 2 : 1, offset: props.reverse ? 1 : 0}}>
-            <Fade bottom delay={delay + 0}>
+            <Fade bottom delay={0}>
               <Line color={props.color}/>
               <TitleSuper>{props.superText}</TitleSuper>
             </Fade>
-            <Fade bottom opposite delay={delay + 200}>
-              <Title hero={props.hero}>{props.titleText}</Title>
+            <Fade bottom opposite delay={200}>
+              <Title>{props.titleText}</Title>
             </Fade>
-            <Fade bottom delay={delay + 400}>
+            <Fade bottom delay={400}>
               <TitleSub>{props.subText}</TitleSub>
             </Fade>
-            <Fade bottom delay={delay + 600}>
+            <Fade bottom delay={600}>
               <div>
                 <PrimaryButton color={props.color}>{props.primaryButton}</PrimaryButton>
                 <SecondaryButton color={props.color}>{props.secondaryButton}</SecondaryButton>
               </div>
             </Fade>
           </Col>
-          <Col xs={{size: verticalPhoto ? 8 : 12, offset: verticalPhoto ? 2 : 0}} md={{size: props.hero ? 6 : 4, order: props.reverse ? 1 : 2, offset: props.hero ? 0 : 1}}>
-            <Fade right={!props.reverse} left={props.reverse} delay={delay + 800} duration={1250}>
-              <MockImg src={props.image} alt="Project mockup" hero={props.hero} ref={imgRef}/>
+          <Col xs={{size: verticalPhoto ? 8 : 12, offset: verticalPhoto ? 2 : 0}} md={{size: 4, order: props.reverse ? 1 : 2, offset: 1}}>
+            <Fade right={!props.reverse} left={props.reverse} delay={800} duration={1250}>
+              <MockImg src={props.image} alt="Project mockup" ref={imgRef}/>
             </Fade>
           </Col>
         </BigRow>

@@ -4,7 +4,6 @@ import Slide from 'react-reveal/Slide'
 import heroMock from '../../assets/hero2.png'
 import mockup2 from '../../assets/mockup2.png'
 import mockup3 from '../../assets/mockup3.png'
-import NavBar from '../NavBar/NavBar';
 import About from '../About/About';
 import Project from '../Project/Project';
 import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
@@ -17,6 +16,7 @@ import { MediumAndAbove, Small } from '../../responsiveTags'
 import interactiveResumeMock from '../../assets/interactive-resume.png'
 import southwestAirlinesMock from '../../assets/southwest-airlines.png'
 import capitalOneMock from '../../assets/capital-one.png'
+import Hero from '../Project/Hero';
 
 const BlackBG = styled.div`
   background-color: black;
@@ -104,8 +104,7 @@ function Homepage(props) {
     <BlackBG>
       <Slide bottom duration={500}>
         <WhiteBG>
-          <NavBar />
-          <Project hero {...heroProject} id={heroProject.key}/>
+          <Hero {...heroProject}/>
           <About />
           {
             mainProjects.map(project => (

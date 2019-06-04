@@ -10,14 +10,14 @@ import { FaLinkedin, FaFilePdf, FaBars } from "react-icons/fa";
 const LogoTitle = styled.h3`
   font-family: 'Permanent Marker', cursive;
   font-family: 'Rock Salt', cursive;
-  margin: ${({ inverse }) => inverse ? "2rem 0" : "0"};
-  color: ${({ inverse }) => inverse ? "white" : "#303546"};
+  margin: 0;
+  color: white;
 `
 const NavLink = styled(Link)`
   display: inline-block;
   margin: 0 1rem;
   padding: 0 .75rem;
-  color: hsla(226.36363636363637,18.64%,23.14%,.8) !important;
+  color: white !important;
   font-weight: 600;
   transition: transform 100ms ease-in-out;
   &:hover {
@@ -26,7 +26,8 @@ const NavLink = styled(Link)`
   }
 `
 const HeaderRow = styled(Row)`
-  height: 6rem;
+  height: 10vh;
+  min-height: 5rem;
   align-items: center;
   display: flex;
 `
@@ -42,6 +43,7 @@ const MobileNav = styled.div`
   transform: translate3d(${({ open }) => open ? "0%" : "100%"}, 0, 0);
   transition: transform 300ms;
   padding-left: 1rem;
+  padding-top: 7rem;
   color: white !important;
 
   ${({ theme }) => theme.breakpoints.lg`
@@ -57,7 +59,7 @@ const MobileNavLink = styled(Link)`
   padding: .25rem 0;
 `
 const NavToggle = styled.h3`
-  color: ${({ open }) => open ? "white" : "#333"};
+  color: white;
   margin-right: 1rem;
   margin-bottom: 0;
 `
@@ -72,13 +74,10 @@ const Icon = styled.a`
   margin-right: 1.5rem;
   color: white !important;
 `
-const Highlight = styled.span`
-  color: ${({ theme }) => theme.color.primary.normal}
-`
 
 const Logo = (props) => (
   <div className={clsx("d-flex align-items-center", props.className)}>
-    <LogoTitle inverse={props.inverse}><Highlight>K</Highlight>ellen <Highlight>S</Highlight>chmidt</LogoTitle>
+    <LogoTitle>Kellen Schmidt</LogoTitle>
   </div>
 )
 
@@ -92,7 +91,6 @@ function NavBar(props) {
   return (
     <>
       <MobileNav open={mobileNavOpen} onClick={toggleNav}>
-        <Logo inverse/>
         <MobileNavLink to="about" smooth={true} duration={500} offset={-120} onClick={toggleNav}>About</MobileNavLink>
         <MobileNavLink to="url-shortener" smooth={true} duration={500} offset={-40} onClick={toggleNav}>Experience / Projects</MobileNavLink>
         <MobileNavLink to="education" smooth={true} duration={500} offset={-160} onClick={toggleNav}>Education</MobileNavLink>
@@ -105,7 +103,9 @@ function NavBar(props) {
       <Container>
         <HeaderRow>
           <Fade duration={500} delay={500}>
-            <Logo className="ml-3"/>
+            <div style={{zIndex: 2}}>
+              <Logo className="ml-3"/>
+            </div>
             <div className="ml-auto" style={{zIndex: 2}}>
               <LargeAndAbove>
                 <NavLink to="about" smooth={true} duration={500} offset={-320}>About</NavLink>
