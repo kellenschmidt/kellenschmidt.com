@@ -39,7 +39,7 @@ const heroProject = {
     text: "Resume",
     link: "https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf",
   },
-  color: "main",
+  color: "primary",
   image: heroMock,
   reverse: false,
 }
@@ -47,7 +47,7 @@ const heroProject = {
 const mainProjects = [
   {
     key: "url-shortener",
-    superText: "Angular 7 | GraphQL",
+    superText: "Angular 8 | GraphQL",
     titleText: "URL Shortener",
     subText: "Take long URLs and compress them into short links which are easy to share, tweet, email! Created entirely from scratch as a personal project.",
     primaryButton: {
@@ -118,7 +118,7 @@ const carouselProjects = [
   },
   {
     key: "interactive-resume",
-    superText: "Angular 7 | PHP",
+    superText: "Angular 8 | PHP",
     titleText: "Interactive Resume Website",
     subText: "Previous version of my personal portfolio website to detail my background, describe my projects, characterize my work experience, and depict my skills.",
     primaryButton: {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Container } from 'reactstrap'
+import { Container, Row } from 'reactstrap'
 import { Element } from 'react-scroll'
 import SkillGroup from './SkillGroup'
 
@@ -118,7 +118,6 @@ const skillGroups = [
 ]
 
 const MyContainer = styled(Container)`
-  margin-top: 20rem;
   position: relative;
   height: 50vh;
   top: 0px;
@@ -138,13 +137,14 @@ function Skills(props) {
       <MyContainer>
         {
           skillGroups.map((group, idx) => (
-            <SkillGroup 
-              index={idx}
-              open={current === idx} 
-              high={current === idx || previous === idx}
-              setOpen={() => setOpen(current === idx ? null : idx)}
-              skillData={group}
-              key={group.title} />
+            <Row key={group.title}>
+              <SkillGroup 
+                index={idx}
+                open={current === idx} 
+                high={current === idx || previous === idx}
+                setOpen={() => setOpen(current === idx ? null : idx)}
+                skillData={group} />
+            </Row>
           ))
         }
       </MyContainer>

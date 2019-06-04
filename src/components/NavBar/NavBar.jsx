@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import KSLogo from '../../assets/ks-logo.png'
 import { Link } from 'react-scroll'
 import { Container, Row } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
@@ -8,14 +7,6 @@ import { MediumAndBelow, LargeAndAbove } from '../../responsiveTags'
 import clsx from 'clsx'
 import { FaLinkedin, FaFilePdf, FaBars } from "react-icons/fa";
 
-const LogoLetters = styled.h1`
-  font-family: 'Permanent Marker', cursive;
-  margin-right: 1rem;
-  letter-spacing: normal;
-  letter-spacing: -5px;
-  font-size: 3rem;
-  color: ${({ theme }) => theme.color.main.normal};
-`
 const LogoTitle = styled.h3`
   font-family: 'Permanent Marker', cursive;
   font-family: 'Rock Salt', cursive;
@@ -74,7 +65,7 @@ const ColorBar = styled.div`
   width: 15rem;
   height: .5rem;
   border-radius: 1.25rem;
-  background-image: ${({ theme }) => `linear-gradient(135deg, ${theme.color.main.normal}, ${theme.color.main.light})`};
+  background-image: ${({ theme }) => `linear-gradient(135deg, ${theme.color.primary.normal}, ${theme.color.primary.light})`};
   margin: .75rem 0 1.25rem;
 `
 const Icon = styled.a`
@@ -82,14 +73,11 @@ const Icon = styled.a`
   color: white !important;
 `
 const Highlight = styled.span`
-  color: ${({ theme }) => theme.color.main.normal}
+  color: ${({ theme }) => theme.color.primary.normal}
 `
 
 const Logo = (props) => (
   <div className={clsx("d-flex align-items-center", props.className)}>
-    {/* <img src={KSLogo} alt="Logo" height="50"/> */}
-    {/* <LogoLetters>KS</LogoLetters> */}
-    {/* <LogoTitle inverse={props.inverse}>Kellen Schmidt</LogoTitle> */}
     <LogoTitle inverse={props.inverse}><Highlight>K</Highlight>ellen <Highlight>S</Highlight>chmidt</LogoTitle>
   </div>
 )
@@ -105,11 +93,11 @@ function NavBar(props) {
     <>
       <MobileNav open={mobileNavOpen} onClick={toggleNav}>
         <Logo inverse/>
-        <MobileNavLink to="about" smooth={true} duration={500} offset={-100} onClick={toggleNav} style={{textDecoration: 'underline'}}>About</MobileNavLink>
-        <MobileNavLink to="url-shortener" smooth={true} duration={500} offset={-100} onClick={toggleNav}>Experience / Projects</MobileNavLink>
-        <MobileNavLink to="education" smooth={true} duration={500} onClick={toggleNav}>Education</MobileNavLink>
-        <MobileNavLink to="skills" smooth={true} duration={500} onClick={toggleNav}>Skills</MobileNavLink>
-        <MobileNavLink to="contact" smooth={true} duration={500} onClick={toggleNav}>Contact</MobileNavLink>
+        <MobileNavLink to="about" smooth={true} duration={500} offset={-120} onClick={toggleNav} style={{textDecoration: 'underline'}}>About</MobileNavLink>
+        <MobileNavLink to="url-shortener" smooth={true} duration={500} offset={-40} onClick={toggleNav}>Experience / Projects</MobileNavLink>
+        <MobileNavLink to="education" smooth={true} duration={500} offset={-160} onClick={toggleNav}>Education</MobileNavLink>
+        <MobileNavLink to="skills" smooth={true} duration={500} offset={-160} onClick={toggleNav}>Skills</MobileNavLink>
+        <MobileNavLink to="contact" smooth={true} duration={500} offset={-160} onClick={toggleNav}>Contact</MobileNavLink>
         <ColorBar />
         <Icon href="https://linkedin.com/in/kellens" target="_blank" rel="noopener"><FaLinkedin/></Icon>
         <Icon href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener"><FaFilePdf/></Icon>
@@ -120,10 +108,10 @@ function NavBar(props) {
             <Logo className="ml-3"/>
             <div className="ml-auto" style={{zIndex: 2}}>
               <LargeAndAbove>
-                <NavLink to="about" smooth={true} duration={500} offset={-100}>About</NavLink>
-                <NavLink to="url-shortener" smooth={true} duration={500} offset={-100}>Experience/Projects</NavLink>
-                <NavLink to="education" smooth={true} duration={500}>Education</NavLink>
-                <NavLink to="skills" smooth={true} duration={500}>Skills</NavLink>
+                <NavLink to="about" smooth={true} duration={500} offset={-320}>About</NavLink>
+                <NavLink to="url-shortener" smooth={true} duration={500} offset={-260}>Experience/Projects</NavLink>
+                <NavLink to="education" smooth={true} duration={500} offset={-350}>Education</NavLink>
+                <NavLink to="skills" smooth={true} duration={500} offset={-300}>Skills</NavLink>
                 <NavLink to="contact" smooth={true} duration={500}>Contact</NavLink>
               </LargeAndAbove>
               <MediumAndBelow>

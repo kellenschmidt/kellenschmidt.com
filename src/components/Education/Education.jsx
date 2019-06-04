@@ -16,12 +16,17 @@ const Triangle = styled.div`
   color: white;
   padding: 2.5rem;
 
-  ${({ theme }) => theme.breakpoints.sm`
+  ${({ theme }) => theme.breakpoints.md`
     background: rgba(0,0,0,.6);
   `}
 `
 const Wrapper = styled.div`
   position: relative;
+  margin-bottom: 20rem;
+
+  ${({ theme }) => theme.breakpoints.md`
+    margin: 10rem 0;
+  `}
 `
 
 function Education() {

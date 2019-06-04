@@ -12,6 +12,10 @@ const ColorContainer = styled(Container)`
   padding-top: 5rem;
   padding-bottom: 5rem;
   margin-top: 20rem;
+
+  ${({ theme }) => theme.breakpoints.md`
+    margin-top: 10rem;
+  `}
 `
 const CenterRow = styled(Row)`
   justify-content: center
@@ -41,7 +45,7 @@ const Avatar = styled.a`
 function Contact() {
   return (
     <Element name="contact">
-      <ColorContainer fluid color="main">
+      <ColorContainer fluid color="primary">
         <CenterRow>
           <Fade>
             <Title className="text-white">Let's Connect!</Title>

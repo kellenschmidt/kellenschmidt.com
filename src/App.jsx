@@ -48,7 +48,8 @@ const sizes = {
 const theme = {
   color: {
     ...colors,
-    main: colors.pink,
+    primary: colors.pink,
+    secondary: colors.blue,
   },
   breakpoints: Object.keys(sizes).reduce((acc, label) => {
     acc[label] = (...args) => css`

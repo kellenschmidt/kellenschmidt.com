@@ -10,9 +10,12 @@ const BigRow = styled(Row)`
   display: flex;
   margin-bottom: 15rem;
   
-  ${({ theme, hero }) => theme.breakpoints.sm`
-    margin-bottom: 8rem;
+  ${({ theme, hero }) => theme.breakpoints.md`
+    margin-bottom: 12rem;
     margin-top: ${hero ? "2rem" : "0"};
+  `}
+  ${({ theme }) => theme.breakpoints.sm`
+    margin-bottom: 8rem;
     height: initial;
   `}
 `
@@ -51,9 +54,9 @@ export const SecondaryButton = styled.button`
 export const TitleSuper = styled.p`
   font-weight: 600;
   color: rgba(48,53,70,.75);
-  font-size: 1.625rem;
   margin: 15px 0;
-  line-height: 1.625rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
 
   ${({ theme }) => theme.breakpoints.sm`
     font-size: 1.125rem;
@@ -67,6 +70,10 @@ export const Title = styled.p`
   line-height: 3.125rem;
   margin: 5px 0 15px;
   
+  ${({ theme }) => theme.breakpoints.lg`
+    font-size: 2rem;
+    line-height: 2.25rem;
+  `}
   ${({ theme }) => theme.breakpoints.sm`
     font-size: 1.625rem;
     line-height: 1.875rem;
@@ -80,16 +87,20 @@ export const TitleSub = styled.p`
   line-height: 1.5rem;
   margin-bottom: 25px;
   
+  ${({ theme }) => theme.breakpoints.md`
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  `}
   ${({ theme }) => theme.breakpoints.sm`
     font-size: 1rem;
     line-height: 1.375rem;
   `}
 `
 export const Line = styled.div`
-  width: 60px;
+  width: 3.75rem;
   height: 3px;
   background-color: ${({ color, theme }) => theme.color[color].normal};
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 `
 export const MockImg = styled.img`
   width: ${({ hero }) => hero ? "220%" : "100%"};
@@ -121,7 +132,7 @@ function Project(props) {
               <TitleSuper>{props.superText}</TitleSuper>
             </Fade>
             <Fade bottom opposite delay={delay + 200}>
-              <Title hero={props.hero}>{props.titleText}.</Title>
+              <Title hero={props.hero}>{props.titleText}</Title>
             </Fade>
             <Fade bottom delay={delay + 400}>
               <TitleSub>{props.subText}</TitleSub>

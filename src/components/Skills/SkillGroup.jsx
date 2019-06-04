@@ -4,6 +4,7 @@ import { useTransition, useSpring, useChain, config, animated } from 'react-spri
 import { Container, Row, Col } from 'reactstrap'
 import SkillChip from './SkillChip'
 import Fade from 'react-reveal/Fade'
+import { MediumAndAbove } from '../../responsiveTags'
 
 const SkillsWrapper = styled(animated.div)`
   cursor: pointer;
@@ -11,18 +12,23 @@ const SkillsWrapper = styled(animated.div)`
   will-change: top, height;
   width: 100%;
   transition: transform 0.1s ease-in-out;
-  background: ${({ theme }) => `linear-gradient(135deg, ${theme.color.main.normal}, ${theme.color.main.light})`};
-  padding: .5rem;
-  border-radius: 1.3rem;
+  background: ${({ theme }) => `linear-gradient(135deg, ${theme.color.primary.normal}, ${theme.color.primary.light})`};
+  padding: .45rem;
+  border-radius: 1.4rem;
   position: absolute;
 
   &:hover {
     transform: ${({ open }) => open ? 'scale(1.0)' : 'scale(1.025)'};
   }
+
+  ${({ theme }) => theme.breakpoints.md`
+    padding: .35rem;
+    border-radius: 1.25rem;
+    transform: scale(1.0);
+  `}
 `
 const SkillsBox = styled.div`
   border-radius: 1rem;
-  border: solid .5rem transparent;
   background: white;
   width: 100%;
   height: 100%;
@@ -42,7 +48,7 @@ const GridBox = styled(animated.div)`
 const Item = styled(animated.div)`
   width: 100%;
   height: 100%;
-  background-color: lightblue;
+  background-color: ${({ theme }) => theme.color.secondary.normal};
   background-image: ${({ image }) => `url(https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_120/${image}-chip)`};
   background-position: left center;
   background-repeat: no-repeat;
@@ -60,6 +66,10 @@ const SkillsCol = styled(Col)`
 const ChipContainer = styled(Container)`
   position: absolute;
   z-index: 1;
+`
+const GroupTitle = styled.h1`
+  font-size: 2rem;
+  margin: 0;
 `
 
 function SkillGroup(props) {
@@ -93,10 +103,12 @@ function SkillGroup(props) {
             <ChipContainer>
               <Fade delay={750} duration={250}>
                 <Row>
-                  <Col xs={5}>
-                    <h1 className="m-0">{skillData.title}</h1>
-                  </Col>
-                  <SkillsCol xs={7}>
+                  <MediumAndAbove>
+                    <Col xs={0} md={5}>
+                      <GroupTitle>{skillData.title}</GroupTitle>
+                    </Col>
+                  </MediumAndAbove>
+                  <SkillsCol xs={12} md={7}>
                     {
                       skillData.skills.map(skill => (
                         <SkillChip key={skill.name} style={{ ...props }} img={`https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_120/${skill.image}-chip`} text={skill.name}/>

@@ -30,7 +30,7 @@ const ItemTitle = styled.p`
 `
 const LearnMoreDiv = styled.div`
   text-align: center;
-  padding: 2rem 0 4rem;
+  padding-bottom: 4rem;
   color: lightgrey;
 `
 const CenterLine = styled(Line)`
