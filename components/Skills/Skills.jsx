@@ -143,7 +143,8 @@ function Skills(props) {
                 open={current === idx} 
                 high={current === idx || previous === idx}
                 setOpen={() => setOpen(current === idx ? null : idx)}
-                skillData={group} />
+                skillData={group}
+                key={group.title}/>
             </Row>
           ))
         }

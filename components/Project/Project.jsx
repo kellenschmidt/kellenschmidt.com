@@ -4,18 +4,15 @@ import { Container, Row, Col } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
 import { Element } from 'react-scroll'
 
-export const BigRow = styled(Row)`
-  align-items: center;
-  display: flex;
+export const MyContainer = styled(Container)`
   margin-bottom: 15rem;
-  
   ${({ theme }) => theme.breakpoints.md`
-    margin-bottom: 12rem;
-  `}
-  ${({ theme }) => theme.breakpoints.sm`
     margin-bottom: 10rem;
-    height: initial;
   `}
+`
+export const BigRow = styled(Row)`
+  display: flex;
+  align-items: center;
 `
 export const PrimaryButton = styled.button`
   padding: 12px 28px;
@@ -118,7 +115,7 @@ function Project(props) {
 
   return (
     <Element name={props.id}>
-      <Container id={props.id}>
+      <MyContainer id={props.id}>
         <BigRow>
           <Col xs={12} md={{size: 6, order: props.reverse ? 2 : 1, offset: props.reverse ? 1 : 0}}>
             <Fade bottom delay={0}>
@@ -144,7 +141,7 @@ function Project(props) {
             </Fade>
           </Col>
         </BigRow>
-      </Container>
+      </MyContainer>
     </Element>
   );
 }

@@ -1,20 +1,38 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container, Col } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
-import { BigRow as BigRowI, TitleSuper as TitleSuperI, Title as TitleI, TitleSub as TitleSubI, PrimaryButton as PrimaryButtonI, SecondaryButton as SecondaryButtonI, MockImg as MockImgI } from './Project'
+import { MyContainer as MyContainerI, BigRow as BigRowI, TitleSuper as TitleSuperI, Title as TitleI, TitleSub as TitleSubI, PrimaryButton as PrimaryButtonI, SecondaryButton as SecondaryButtonI, MockImg as MockImgI } from './Project'
 import NavBar from '../NavBar/NavBar';
+import { MediumAndAbove, Small } from '../responsiveTags';
 
 const Background = styled.div`
-  background-image: linear-gradient(45deg, ${({ theme }) => `${theme.color.primary.normal}, ${theme.color.primary.light});`}
+  background-image: linear-gradient(45deg, ${({ theme }) => `${theme.color.primary.normal}, ${theme.color.primary.light}`});
   color: white;
 `
-const BigRow = styled(BigRowI)`
-  height: 70vh;
-  align-content: space-evenly;
-  ${({ theme }) => theme.breakpoints.sm`
-    height: 80vh;
+const MyContainer = styled(MyContainerI)`
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  ${({ theme }) => theme.breakpoints.md`
+    min-height: 80vh;
+    align-items: initial;
+    position: relative;
+    overflow: hidden;
   `}
+`
+const BigRow = styled(BigRowI)`
+  ${({ theme }) => theme.breakpoints.md`
+    margin: 0;
+    padding-top: 4vh;
+    align-items: initial;
+  `}
+`
+const HeroImgRow = styled(Row)`
+  position: absolute;
+  bottom: -5%;
+  left: -7%;
+  width: 122%;
 `
 const TitleSuper = styled(TitleSuperI)`
   color: rgba(251,253,255,.8);
@@ -41,7 +59,11 @@ const MockImg = styled(MockImgI)`
   width: 210%;
   ${({ theme }) => theme.breakpoints.md`
     width: 100%;
+    margin-top: 0rem;
   `}
+`
+const Spacer = styled.div`
+  height: 66vw;
 `
 
 function Hero(props) {
@@ -50,8 +72,8 @@ function Hero(props) {
   return (
     <Background>
       <NavBar inverse/>
-      <Container>
-        <BigRow>
+      <MyContainer>
+        <BigRow noGutters>
           <Col xs={12} md={6}>
             <Fade bottom delay={delay + 0}>
               <TitleSuper>{props.superText}</TitleSuper>
@@ -69,13 +91,27 @@ function Hero(props) {
               </div>
             </Fade>
           </Col>
-          <Col xs={12} md={6}>
-            <Fade right delay={delay + 800} duration={1250}>
-              <MockImg src={props.image} alt="Project mockup" />
-            </Fade>
-          </Col>
+          <MediumAndAbove>
+            <Col xs={12} md={6}>
+              <Fade right delay={delay + 800} duration={1250}>
+                <MockImg src={props.image} alt="Project mockup" />
+              </Fade>
+            </Col>
+          </MediumAndAbove>
+          <Small>
+            <Col xs={12}>
+              <Spacer></Spacer>
+            </Col>
+          </Small>
         </BigRow>
-      </Container>
+        <Small>
+          <HeroImgRow>
+            <Fade bottom delay={delay + 800} duration={1250}>
+              <MockImg src={`${props.image}`} alt="Project mockup" />
+            </Fade>
+          </HeroImgRow>
+        </Small>
+      </MyContainer>
     </Background>
   );
 }
