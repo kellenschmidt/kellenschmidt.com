@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { withTheme } from 'styled-components'
+import styled from 'styled-components'
 import { Container, Col } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
 import { BigRow as BigRowI, TitleSuper as TitleSuperI, Title as TitleI, TitleSub as TitleSubI, PrimaryButton as PrimaryButtonI, SecondaryButton as SecondaryButtonI, MockImg as MockImgI } from './Project'
@@ -13,7 +13,7 @@ const BigRow = styled(BigRowI)`
   height: 70vh;
   align-content: space-evenly;
   ${({ theme }) => theme.breakpoints.sm`
-    height: 90vh;
+    height: 80vh;
   `}
 `
 const TitleSuper = styled(TitleSuperI)`
@@ -71,7 +71,7 @@ function Hero(props) {
           </Col>
           <Col xs={12} md={6}>
             <Fade right delay={delay + 800} duration={1250}>
-              <MockImg src={`https://res.cloudinary.com/kellenscloud/image/upload/hero-${props.theme.color.name}.png`} alt="Project mockup" />
+              <MockImg src={props.image} alt="Project mockup" />
             </Fade>
           </Col>
         </BigRow>
@@ -80,4 +80,4 @@ function Hero(props) {
   );
 }
 
-export default withTheme(Hero);
+export default Hero;

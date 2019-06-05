@@ -2,7 +2,6 @@ import React, { useState, useEffect, createRef } from 'react'
 import styled from 'styled-components'
 import { Container } from 'reactstrap'
 import Slide from 'react-reveal/Slide'
-import smu from '../../assets/smu.jpg'
 import { Element } from 'react-scroll'
 
 const Img = styled.img`
@@ -43,12 +42,12 @@ function Education() {
       <Container>
         <Wrapper>
           <Slide right>
-            <Img src={smu} alt="SMU" className="shadow-lg" width={imgSize.width} height={imgSize.height}/>
+            <Img src="https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/v1559747722/smu1" alt="SMU" className="shadow-lg" width={imgSize.width} height={imgSize.height}/>
           </Slide>
           <Slide left>
             <Triangle ref={ref}>
-              <h2>Southern Methodist University</h2>
-              <h2>B.S. Computer Science, 2019</h2>
+              <h2 className="mb-3">Southern Methodist University</h2>
+              <h2 className="mb-3">B.S. Computer Science, 2019</h2>
               <h2 className="mb-0">GPA: 3.81</h2>
             </Triangle>
           </Slide>

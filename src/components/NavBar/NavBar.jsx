@@ -42,15 +42,14 @@ const MobileNav = styled.div`
   z-index: 2;
   transform: translate3d(${({ open }) => open ? "0%" : "100%"}, 0, 0);
   transition: transform 300ms;
-  padding-left: 1rem;
-  padding-top: 7rem;
+  padding: 6rem 1rem 0;
   color: white !important;
 
   ${({ theme }) => theme.breakpoints.lg`
     font-size: 2.75rem;
   `}
   ${({ theme }) => theme.breakpoints.md`
-    font-size: 2.375rem;
+    font-size: 2.125rem;
   `}
 `
 const MobileNavLink = styled(Link)`
@@ -91,11 +90,11 @@ function NavBar(props) {
   return (
     <>
       <MobileNav open={mobileNavOpen} onClick={toggleNav}>
-        <MobileNavLink to="about" smooth={true} duration={500} offset={-120} onClick={toggleNav}>About</MobileNavLink>
-        <MobileNavLink to="url-shortener" smooth={true} duration={500} offset={-40} onClick={toggleNav}>Experience / Projects</MobileNavLink>
-        <MobileNavLink to="education" smooth={true} duration={500} offset={-160} onClick={toggleNav}>Education</MobileNavLink>
-        <MobileNavLink to="skills" smooth={true} duration={500} offset={-160} onClick={toggleNav}>Skills</MobileNavLink>
-        <MobileNavLink to="contact" smooth={true} duration={500} offset={-160} onClick={toggleNav}>Contact</MobileNavLink>
+        <MobileNavLink to="about" smooth={true} duration={750} offset={-120} onClick={toggleNav}>About</MobileNavLink>
+        <MobileNavLink to="url-shortener" smooth={true} duration={750} offset={-40} onClick={toggleNav}>Experience / Projects</MobileNavLink>
+        <MobileNavLink to="education" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Education</MobileNavLink>
+        <MobileNavLink to="skills" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Skills</MobileNavLink>
+        <MobileNavLink to="contact" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Contact</MobileNavLink>
         <ColorBar />
         <Icon href="https://linkedin.com/in/kellens" target="_blank" rel="noopener noreferrer"><FaLinkedin/></Icon>
         <Icon href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer"><FaFilePdf/></Icon>
@@ -108,11 +107,11 @@ function NavBar(props) {
             </div>
             <div className="ml-auto" style={{zIndex: 2}}>
               <LargeAndAbove>
-                <NavLink to="about" smooth={true} duration={500} offset={-320}>About</NavLink>
-                <NavLink to="url-shortener" smooth={true} duration={500} offset={-260}>Experience/Projects</NavLink>
-                <NavLink to="education" smooth={true} duration={500} offset={-350}>Education</NavLink>
-                <NavLink to="skills" smooth={true} duration={500} offset={-300}>Skills</NavLink>
-                <NavLink to="contact" smooth={true} duration={500}>Contact</NavLink>
+                <NavLink to="about" smooth={true} duration={750} offset={-320}>About</NavLink>
+                <NavLink to="url-shortener" smooth={true} duration={750} offset={-260}>Experience/Projects</NavLink>
+                <NavLink to="education" smooth={true} duration={750} offset={-350}>Education</NavLink>
+                <NavLink to="skills" smooth={true} duration={750} offset={-300}>Skills</NavLink>
+                <NavLink to="contact" smooth={true} duration={750}>Contact</NavLink>
               </LargeAndAbove>
               <MediumAndBelow>
                 <NavToggle open={mobileNavOpen} onClick={toggleNav}><FaBars/></NavToggle>

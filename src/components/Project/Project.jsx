@@ -13,7 +13,7 @@ export const BigRow = styled(Row)`
     margin-bottom: 12rem;
   `}
   ${({ theme }) => theme.breakpoints.sm`
-    margin-bottom: 11rem;
+    margin-bottom: 10rem;
     height: initial;
   `}
 `

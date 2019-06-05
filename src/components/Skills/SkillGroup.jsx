@@ -52,6 +52,7 @@ const Item = styled(animated.div)`
   background-image: ${({ image }) => `url(https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_120/${image}-chip)`};
   background-position: left center;
   background-repeat: no-repeat;
+  background-size: contain;
   border-radius: 5px;
   will-change: transform, opacity;
   width: ${({ score }) => `${score}%`};
@@ -101,7 +102,7 @@ function SkillGroup(props) {
         {
           !open && (
             <ChipContainer>
-              <Fade delay={500} duration={250}>
+              <Fade delay={500} duration={500}>
                 <Row>
                   <MediumAndAbove>
                     <Col xs={0} md={5}>

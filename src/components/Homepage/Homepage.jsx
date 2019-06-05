@@ -1,9 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import Slide from 'react-reveal/Slide'
-import heroMock from '../../assets/hero2.png'
-import mockup2 from '../../assets/mockup2.png'
-import mockup3 from '../../assets/mockup3.png'
 import About from '../About/About';
 import Project from '../Project/Project';
 import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
@@ -13,9 +10,6 @@ import Footer from '../Footer/Footer';
 import { Link } from 'react-scroll'
 import Skills from '../Skills/Skills';
 import { MediumAndAbove, Small } from '../../responsiveTags'
-import interactiveResumeMock from '../../assets/interactive-resume.png'
-import southwestAirlinesMock from '../../assets/southwest-airlines.png'
-import capitalOneMock from '../../assets/capital-one.png'
 import Hero from '../Project/Hero';
 
 const BlackBG = styled.div`
@@ -33,18 +27,6 @@ const Url = styled.a`
   }
 `
 
-const heroProject = {
-  key: "hero",
-  superText: "Hey there, welcome",
-  titleText: "This is Kellen Schmidt's personal website",
-  subText: "I'm a software engineer with a particular interest in full-stack web development. Check out my awesome projects and work experience!",
-  primaryButton: <Url href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</Url>,
-  secondaryButton: <Link to="contact" smooth={true} duration={500}>Contact</Link>,
-  color: "primary",
-  image: heroMock,
-  reverse: false,
-}
-
 const mainProjects = [
   {
     key: "url-shortener",
@@ -54,18 +36,18 @@ const mainProjects = [
     primaryButton: <Url href="https://kellenschmidt.com/url">Try it out</Url>,
     secondaryButton: "Learn More",
     color: "usOrange",
-    image: mockup2,
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/url-shortener-mock",
     reverse: false,
   },
   {
     key: "compass-app",
     superText: "React | Redux | Express",
-    titleText: "BakeMark Compass App",
+    titleText: "BakeMark Sales App",
     subText: "Built a full-stack web application used daily by 200+ sales representatives nationwide to capture competitive product information and strategically analyze market position.",
     primaryButton: "Learn More",
     secondaryButton: "TBD",
     color: "bmBlue",
-    image: mockup3,
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/compass-app-mock",
     reverse: true,
   },
 ]
@@ -79,7 +61,7 @@ const carouselProjects = [
     primaryButton: "Learn More",
     secondaryButton: "TBD",
     color: "cap1Red",
-    image: capitalOneMock,
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/capital-one-mock",
     reverse: false,
   },
   {
@@ -90,7 +72,7 @@ const carouselProjects = [
     primaryButton: "Learn More",
     secondaryButton: "TBD",
     color: "boldBlue",
-    image: southwestAirlinesMock,
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/southwest-airlines-mock",
     reverse: true,
   },
   {
@@ -101,12 +83,24 @@ const carouselProjects = [
     primaryButton: <Url href="https://kellenschmidt.com">Visit</Url>,
     secondaryButton: "Learn More",
     color: "irGreen",
-    image: interactiveResumeMock,
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/v1559690648/hero-green",
     reverse: false,
   },
 ]
 
 function Homepage(props) {
+  const heroProject = {
+    key: "hero",
+    superText: "Hey there, welcome",
+    titleText: "This is Kellen Schmidt's personal website",
+    subText: "I'm a software engineer with an interest in full-stack web development. Check out my awesome projects and work experience!",
+    primaryButton: <Url href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</Url>,
+    secondaryButton: <Link to="contact" smooth={true} duration={750} offset={-160}>Contact</Link>,
+    color: "primary",
+    image: `https://res.cloudinary.com/kellenscloud/image/upload/hero-${props.theme.color.name}.png`,
+    reverse: false,
+  }
+  
   return (
     <BlackBG>
       <Slide bottom duration={500}>
@@ -138,4 +132,4 @@ function Homepage(props) {
   );
 }
 
-export default Homepage;
+export default withTheme(Homepage);

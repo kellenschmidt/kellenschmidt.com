@@ -30,7 +30,7 @@ const skillGroups = [
       },
       {
         name: "Javascript ES6+",
-        image: "javascript",
+        image: "javascript1",
         score: 75,
       },
     ],
@@ -45,7 +45,7 @@ const skillGroups = [
       },
       {
         name: "Node.js",
-        image: "nodejs",
+        image: "nodejs1",
         score: 80,
       },
       {
@@ -55,7 +55,7 @@ const skillGroups = [
       },
       {
         name: "MySQL",
-        image: "sql",
+        image: "mysql",
         score: 75,
       },
       {
@@ -70,7 +70,7 @@ const skillGroups = [
     skills: [
       {
         name: "Docker",
-        image: "docker",
+        image: "docker1",
         score: 80,
       },
       {
@@ -85,7 +85,7 @@ const skillGroups = [
       },
       {
         name: "CI/CD",
-        image: "cicd",
+        image: "jenkins",
         score: 75,
       },
     ],
@@ -95,7 +95,7 @@ const skillGroups = [
     skills: [
       {
         name: "Python/C++/Java",
-        image: "python",
+        image: "cplusplus",
         score: 75,
       },
       {
