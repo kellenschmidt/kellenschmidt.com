@@ -1,7 +1,5 @@
 import React from 'react'
-import { Provider } from 'react-redux'
 import { ThemeProvider, createGlobalStyle, css } from 'styled-components'
-import store from './store/store'
 import Homepage from './components/Homepage/Homepage'
 
 const heroColors = {
@@ -165,14 +163,12 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <>
-          <GlobalStyle/>
-          <Homepage/>
-        </>
-      </ThemeProvider>
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyle/>
+        <Homepage/>
+      </>
+    </ThemeProvider>
   );
 }
 
