@@ -1,9 +1,8 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, createGlobalStyle, css } from 'styled-components'
 import store from './store/store'
 import Homepage from './components/Homepage/Homepage'
-import { createGlobalStyle, css } from 'styled-components'
 
 const heroColors = {
   blue: {

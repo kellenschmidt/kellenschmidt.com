@@ -4,7 +4,6 @@ import { Link } from 'react-scroll'
 import { Container, Row } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
 import { MediumAndBelow, LargeAndAbove } from '../../responsiveTags'
-import clsx from 'clsx'
 import { FaLinkedin, FaFilePdf, FaBars } from "react-icons/fa";
 
 const LogoTitle = styled.h3`
@@ -74,8 +73,8 @@ const Icon = styled.a`
   color: white !important;
 `
 
-const Logo = (props) => (
-  <div className={clsx("d-flex align-items-center", props.className)}>
+const Logo = () => (
+  <div className="d-flex align-items-center ml-3">
     <LogoTitle>Kellen Schmidt</LogoTitle>
   </div>
 )
@@ -103,7 +102,7 @@ function NavBar(props) {
         <HeaderRow>
           <Fade duration={500} delay={500}>
             <div style={{zIndex: 2}}>
-              <Logo className="ml-3"/>
+              <Logo/>
             </div>
             <div className="ml-auto" style={{zIndex: 2}}>
               <LargeAndAbove>

@@ -18,11 +18,11 @@ const ColorContainer = styled(Container)`
   `}
 `
 const CenterRow = styled(Row)`
-  justify-content: center
+  justify-content: center;
   color: white;
 `
 const Avatar = styled.a`
-  border-radius: 50%
+  border-radius: 50%;
   height: 3.5rem;
   width: 3.5rem;
   background-color: white;
