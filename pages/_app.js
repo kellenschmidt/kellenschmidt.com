@@ -1,6 +1,7 @@
+import App, { Container } from 'next/app'
 import React from 'react'
 import { ThemeProvider, createGlobalStyle, css } from 'styled-components'
-import Homepage from './components/Homepage/Homepage'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const heroColors = {
   blue: {
@@ -43,11 +44,11 @@ const heroColors = {
     light: "rgb(113,194,248)",
     complement: "#4595ec",
   },
-  yellow: {
-    normal: "rgb(142,124,38)",
-    light: "rgb(153,200,74)",
-    complement: "#4595ec",
-  },
+  // yellow: {
+  //   normal: "rgb(142,124,38)",
+  //   light: "rgb(153,200,74)",
+  //   complement: "#4595ec",
+  // },
   // pink: {
   //   dark: "#72006a", // #950051, __, #8c0e8f, #a5279d
   //   normal: "#d859cf",
@@ -112,47 +113,47 @@ const theme = {
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: Gilroy;
-    src: url(Gilroy-Thin.otf);
+    src: url(/static/Gilroy-Thin.otf);
     font-weight: 100;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(Gilroy-UltraLight.otf);
+    src: url(/static/Gilroy-UltraLight.otf);
     font-weight: 200;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(Gilroy-Light.otf);
+    src: url(/static/Gilroy-Light.otf);
     font-weight: 300;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(Gilroy-Regular.ttf);
+    src: url(/static/Gilroy-Regular.ttf);
     font-weight: 400;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(Gilroy-Medium.ttf);
+    src: url(/static/Gilroy-Medium.ttf);
     font-weight: 500;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(Gilroy-SemiBold.otf);
+    src: url(/static/Gilroy-SemiBold.otf);
     font-weight: 600;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(Gilroy-Bold.ttf);
+    src: url(/static/Gilroy-Bold.ttf);
     font-weight: 700;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(Gilroy-ExtraBold.otf);
+    src: url(/static/Gilroy-ExtraBold.otf);
     font-weight: 800;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(Gilroy-Heavy.ttf);
+    src: url(/static/Gilroy-Heavy.ttf);
     font-weight: 900;
   }
 
@@ -161,15 +162,28 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle/>
-        <Homepage/>
-      </>
-    </ThemeProvider>
-  );
-}
+export default class MyApp extends App {
+  static async getInitialProps ({ Component, ctx }) {
+    let pageProps = {}
 
-export default App;
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
+
+    return { pageProps }
+  }
+
+  render () {
+    const { Component, pageProps } = this.props
+    return (
+      <Container>
+        <ThemeProvider theme={theme}>
+          <>
+            <GlobalStyle/>
+            <Component {...pageProps} />
+          </>
+        </ThemeProvider>
+      </Container>
+    )
+  }
+}

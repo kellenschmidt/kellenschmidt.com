@@ -4,7 +4,7 @@ import { useTransition, useSpring, useChain, config, animated } from 'react-spri
 import { Container, Row, Col } from 'reactstrap'
 import SkillChip from './SkillChip'
 import Fade from 'react-reveal/Fade'
-import { MediumAndAbove } from '../../responsiveTags'
+import { MediumAndAbove } from '../responsiveTags'
 
 const SkillsWrapper = styled(animated.div)`
   cursor: pointer;

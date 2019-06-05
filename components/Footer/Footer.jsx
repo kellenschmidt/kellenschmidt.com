@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap'
 import Minesweeper from  'react-minesweeper'
 import "react-minesweeper/lib/minesweeper.css";
 import Tada from 'react-reveal/Tada';
-import { LargeAndAbove } from '../../responsiveTags'
+import { LargeAndAbove } from '../responsiveTags'
 
 const FooterText = styled.a`
   display: block;

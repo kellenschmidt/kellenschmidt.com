@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-scroll'
 import { Container, Row } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
-import { MediumAndBelow, LargeAndAbove } from '../../responsiveTags'
+import { MediumAndBelow, LargeAndAbove } from '../responsiveTags'
 import { FaLinkedin, FaFilePdf, FaBars } from "react-icons/fa";
 
 const LogoTitle = styled.h3`
