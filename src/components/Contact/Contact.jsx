@@ -8,7 +8,7 @@ import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const ColorContainer = styled(Container)`
-  background-image: ${({ color, theme }) => `linear-gradient(135deg, ${theme.color[color].normal}, ${theme.color[color].light})`};
+  background-image: ${({ color, theme }) => `linear-gradient(45deg, ${theme.color[color].normal}, ${theme.color[color].light})`};
   padding-top: 5rem;
   padding-bottom: 5rem;
   margin-top: 20rem;

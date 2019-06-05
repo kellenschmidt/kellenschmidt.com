@@ -67,7 +67,7 @@ const ColorBar = styled.div`
   width: 15rem;
   height: .5rem;
   border-radius: 1.25rem;
-  background-image: ${({ theme }) => `linear-gradient(135deg, ${theme.color.primary.normal}, ${theme.color.primary.light})`};
+  background-image: ${({ theme }) => `linear-gradient(45deg, ${theme.color.primary.normal}, ${theme.color.primary.light})`};
   margin: .75rem 0 1.25rem;
 `
 const Icon = styled.a`

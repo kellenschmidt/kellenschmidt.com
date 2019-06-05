@@ -12,7 +12,7 @@ const SkillsWrapper = styled(animated.div)`
   will-change: top, height;
   width: 100%;
   transition: transform 0.1s ease-in-out;
-  background: ${({ theme }) => `linear-gradient(135deg, ${theme.color.primary.normal}, ${theme.color.primary.light})`};
+  background: ${({ theme }) => `linear-gradient(45deg, ${theme.color.primary.normal}, ${theme.color.primary.light})`};
   padding: .45rem;
   border-radius: 1.4rem;
   position: absolute;
@@ -48,7 +48,7 @@ const GridBox = styled(animated.div)`
 const Item = styled(animated.div)`
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.color.secondary.normal};
+  background-color: ${({ theme }) => theme.color.primary.complement};
   background-image: ${({ image }) => `url(https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_120/${image}-chip)`};
   background-position: left center;
   background-repeat: no-repeat;
@@ -101,7 +101,7 @@ function SkillGroup(props) {
         {
           !open && (
             <ChipContainer>
-              <Fade delay={750} duration={250}>
+              <Fade delay={500} duration={250}>
                 <Row>
                   <MediumAndAbove>
                     <Col xs={0} md={5}>

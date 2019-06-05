@@ -9,7 +9,6 @@ const Chip = styled.div`
   line-height: 2.5rem;
   border-radius: 1.5rem;
   margin: 0 .5rem;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
   background-color: #d2d2d2;
   color: black;
   min-width: fit-content;

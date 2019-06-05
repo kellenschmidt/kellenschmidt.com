@@ -25,13 +25,20 @@ const BlackBG = styled.div`
 const WhiteBG = styled.div`
   background-color: white;
 `
+const Url = styled.a`
+  color: inherit;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+`
 
 const heroProject = {
   key: "hero",
   superText: "Hey there, welcome",
   titleText: "This is Kellen Schmidt's personal website",
   subText: "I'm a software engineer with a particular interest in full-stack web development. Check out my awesome projects and work experience!",
-  primaryButton: <a href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>Resume</a>,
+  primaryButton: <Url href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</Url>,
   secondaryButton: <Link to="contact" smooth={true} duration={500}>Contact</Link>,
   color: "primary",
   image: heroMock,
@@ -44,9 +51,9 @@ const mainProjects = [
     superText: "Angular 8 | GraphQL",
     titleText: "URL Shortener",
     subText: "Take long URLs and compress them into short links which are easy to share, tweet, email! Created entirely from scratch as a personal project.",
-    primaryButton: <a href="https://kellenschmidt.com/url" style={{ color: "inherit" }}>Try it out</a>,
+    primaryButton: <Url href="https://kellenschmidt.com/url">Try it out</Url>,
     secondaryButton: "Learn More",
-    color: "orange",
+    color: "usOrange",
     image: mockup2,
     reverse: false,
   },
@@ -57,7 +64,7 @@ const mainProjects = [
     subText: "Built a full-stack web application used daily by 200+ sales representatives nationwide to capture competitive product information and strategically analyze market position.",
     primaryButton: "Learn More",
     secondaryButton: "TBD",
-    color: "blue",
+    color: "bmBlue",
     image: mockup3,
     reverse: true,
   },
@@ -91,9 +98,9 @@ const carouselProjects = [
     superText: "Angular 8 | PHP",
     titleText: "Interactive Resume Website",
     subText: "Previous version of my personal portfolio website to detail my background, describe my projects, characterize my work experience, and depict my skills.",
-    primaryButton: <a href="https://kellenschmidt.com" style={{ color: "inherit" }}>Visit</a>,
+    primaryButton: <Url href="https://kellenschmidt.com">Visit</Url>,
     secondaryButton: "Learn More",
-    color: "green",
+    color: "irGreen",
     image: interactiveResumeMock,
     reverse: false,
   },

@@ -1,40 +1,89 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-// import { BrowserRouter as Router } from 'react-router-dom'
 import store from './store/store'
-import AppRouter from './components/AppRouter/AppRouter'
+import Homepage from './components/Homepage/Homepage'
 import { createGlobalStyle, css } from 'styled-components'
 
-const colors = {
+const heroColors = {
   blue: {
-    normal: "#4595ec",
-    light: "#2dc5ef",
-  },
-  orange: {
-    normal: "#ef6f2d",
-    light: "#efc200",
-  },
-  salmon: {
-    normal: "#ec5d55",
-    light: "#f29c61",
-  },
-  pink: {
-    dark: "#72006a", // #950051, __, #8c0e8f, #a5279d
-    normal: "#d859cf",
-    light: "#f08ed1",
+    normal: "rgb(66,128,241)",
+    light: "rgb(168,167,249)",
+    complement: "#4595ec",
   },
   green: {
+    normal: "rgb(69,159,58)",
+    light: "rgb(104,219,164)",
+    complement: "#4595ec",
+  },
+  teal: {
+    normal: "rgb(70,161,110)",
+    light: "rgb(101,210,226)",
+    complement: "#4595ec",
+  },
+  orange: {
+    normal: "rgb(227,99,57)",
+    light: "rgb(243,170,81)",
+    complement: "#4595ec",
+  },
+  pink: {
+    normal: "rgb(219,89,201)",
+    light: "rgb(240,140,203)",
+    complement: "#4595ec",
+  },
+  purple: {
+    normal: "rgb(151,98,246)",
+    light: "rgb(240,146,249)",
+    complement: "#4595ec",
+  },
+  salmon: {
+    normal: "rgb(236,89,121)",
+    light: "rgb(241,150,125)",
+    complement: "#4595ec",
+  },
+  lightblue: {
+    normal: "rgb(65,151,173)",
+    light: "rgb(113,194,248)",
+    complement: "#4595ec",
+  },
+  yellow: {
+    normal: "rgb(142,124,38)",
+    light: "rgb(153,200,74)",
+    complement: "#4595ec",
+  },
+  // pink: {
+  //   dark: "#72006a", // #950051, __, #8c0e8f, #a5279d
+  //   normal: "#d859cf",
+  //   light: "#f08ed1",
+  //   complement: "#4595ec",
+  // },
+}
+
+const otherColors = {
+  bmBlue: {
+    normal: "#4595ec",
+    light: "#2dc5ef",
+    complement: "#4595ec",
+  },
+  usOrange: {
+    normal: "#ef6f2d",
+    light: "#efc200",
+    complement: "#4595ec",
+  },
+  irGreen: {
     normal: "#47992d",
     light: "#6cdb80",
+    complement: "#4595ec",
   },
   boldBlue: {
     normal: "#304cb2",
     light: "#304cb2",
+    complement: "#4595ec",
   },
   cap1Red: {
     normal: "#d03027",
     light: "#d03027",
+    complement: "#4595ec",
   },
 }
 
@@ -45,11 +94,13 @@ const sizes = {
   xl: 1200,
 }
 
+const randomColor = Object.keys(heroColors)[Math.floor(Math.random() * Object.keys(heroColors).length)]
 const theme = {
   color: {
-    ...colors,
-    primary: colors.pink,
-    secondary: colors.blue,
+    ...heroColors,
+    ...otherColors,
+    primary: heroColors[randomColor],
+    name: randomColor,
   },
   breakpoints: Object.keys(sizes).reduce((acc, label) => {
     acc[label] = (...args) => css`
@@ -119,9 +170,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <>
           <GlobalStyle/>
-          {/* <Router> */}
-            <AppRouter />
-          {/* </Router> */}
+          <Homepage/>
         </>
       </ThemeProvider>
     </Provider>

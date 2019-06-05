@@ -24,7 +24,7 @@ export const PrimaryButton = styled.button`
   font-weight: bold;
   border: none;
   margin-right: 1rem;
-  background-image: linear-gradient(135deg,#f35626,#feab3a); 
+  background-image: linear-gradient(45deg,#f35626,#feab3a); 
   box-shadow: 0 0 10px 2px hsla(184.14634146341464,99.19%,51.37%,.4);
   transition: transform 0.1s ease-in-out;
   &:hover {
@@ -32,7 +32,7 @@ export const PrimaryButton = styled.button`
   }
 
   ${({ color, theme }) => css`
-    background-image: linear-gradient(135deg, ${theme.color[color].normal}, ${theme.color[color].light}); 
+    background-image: linear-gradient(45deg, ${theme.color[color].normal}, ${theme.color[color].light}); 
     box-shadow: 0 0 10px 2px ${theme.color[color].light};
   `}
 `
