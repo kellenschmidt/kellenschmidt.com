@@ -41,7 +41,7 @@ function ProjectCarousel(props) {
   const [selected, setSelected] = useState(-1)
   
   return (
-    <Container>
+    <Container className={props.className}>
       <Fade bottom>
         <Fade opposite when={selected === -1} duration={500}>
           <LearnMoreDiv>

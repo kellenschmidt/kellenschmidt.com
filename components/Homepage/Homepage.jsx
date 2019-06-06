@@ -9,7 +9,7 @@ import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 import { Link } from 'react-scroll'
 import Skills from '../Skills/Skills';
-import { MediumAndAbove, Small } from '../responsiveTags'
+import { Small } from '../responsiveTags'
 import Hero from '../Project/Hero';
 
 const BlackBG = styled.div`
@@ -119,9 +119,7 @@ function Homepage(props) {
               ))
             }
           </Small>
-          <MediumAndAbove>
-            <ProjectCarousel projects={carouselProjects}/>
-          </MediumAndAbove>
+          <ProjectCarousel projects={carouselProjects} className="d-none d-md-block"/>
           <Education />
           <Skills />
           <Contact/>

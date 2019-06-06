@@ -92,24 +92,6 @@ const sizes = {
   xl: 1200,
 }
 
-const randomColor = Object.keys(heroColors)[Math.floor(Math.random() * Object.keys(heroColors).length)]
-const theme = {
-  color: {
-    ...heroColors,
-    ...otherColors,
-    primary: heroColors[randomColor],
-    name: randomColor,
-  },
-  breakpoints: Object.keys(sizes).reduce((acc, label) => {
-    acc[label] = (...args) => css`
-    @media (max-width: ${sizes[label] / 16 - .02}em) {
-      ${css(...args)}
-    }
-  `
-    return acc
-  }, {}),
-}
-
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: Gilroy;
@@ -160,7 +142,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: Gilroy;
   }
-`;
+`
 
 export default class MyApp extends App {
   static async getInitialProps ({ Component, ctx }) {
@@ -170,11 +152,31 @@ export default class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx)
     }
 
-    return { pageProps }
+    const randomColor = Object.keys(heroColors)[Math.floor(Math.random() * Object.keys(heroColors).length)]
+
+    return { pageProps, randomColor }
   }
 
   render () {
     const { Component, pageProps } = this.props
+
+    const theme = {
+      color: {
+        ...heroColors,
+        ...otherColors,
+        primary: heroColors[this.props.randomColor],
+        name: this.props.randomColor,
+      },
+      breakpoints: Object.keys(sizes).reduce((acc, label) => {
+        acc[label] = (...args) => css`
+        @media (max-width: ${sizes[label] / 16 - .02}em) {
+          ${css(...args)}
+        }
+      `
+        return acc
+      }, {}),
+    }
+    
     return (
       <Container>
         <ThemeProvider theme={theme}>

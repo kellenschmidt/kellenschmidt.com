@@ -57,7 +57,6 @@ function Footer() {
           <Col md={5} xs={6}>
             <FooterHeader>It's been real</FooterHeader>
             <FooterText>Thanks for visiting. Learn more about me and check out my work at these links!</FooterText>
-          
           </Col>
           <Col md={{ size: 3, offset: 1 }} xs={6}>
             <FooterHeader>Links</FooterHeader>
