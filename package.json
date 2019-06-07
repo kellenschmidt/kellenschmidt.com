@@ -25,6 +25,7 @@
   "scripts": {
     "dev": "next",
     "build": "sh version.sh && next build",
+    "now-build": "sh version.sh && next build",
     "start": "next start"
   },
   "devDependencies": {

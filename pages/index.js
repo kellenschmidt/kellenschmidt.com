@@ -50,7 +50,7 @@ const Index = (props) => {
         <link href="https://fonts.googleapis.com/css?family=Muli|Permanent+Marker|Rock+Salt" rel="stylesheet"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <ResponsiveContext.Provider values={{ deviceWidth: size.width || props.fakeWidth || 500 }}>
+      <ResponsiveContext.Provider value={{ width: size.width || props.fakeWidth || 500 }}>
         <Homepage/>
       </ResponsiveContext.Provider>
     </>
