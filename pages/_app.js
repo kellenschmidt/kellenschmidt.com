@@ -2,6 +2,9 @@ import App, { Container } from 'next/app'
 import React from 'react'
 import { ThemeProvider, createGlobalStyle, css } from 'styled-components'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import withReduxStore from '../lib/with-redux-store'
+import { Provider } from 'react-redux'
+import { setMobileDetect, mobileParser } from 'react-responsive-redux'
 
 const heroColors = {
   blue: {
@@ -144,7 +147,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export default class MyApp extends App {
+class MyApp extends App {
   static async getInitialProps ({ Component, ctx }) {
     let pageProps = {}
 
@@ -152,13 +155,20 @@ export default class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx)
     }
 
+    const { req, reduxStore } = ctx
+    
+    // do our mobile detection
+    const mobileDetect = mobileParser(req)
+    // set mobile detection for our responsive store
+    reduxStore.dispatch(setMobileDetect(mobileDetect))
+
     const randomColor = Object.keys(heroColors)[Math.floor(Math.random() * Object.keys(heroColors).length)]
 
     return { pageProps, randomColor }
   }
 
   render () {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, reduxStore } = this.props
 
     const theme = {
       color: {
@@ -179,13 +189,17 @@ export default class MyApp extends App {
     
     return (
       <Container>
-        <ThemeProvider theme={theme}>
-          <>
-            <GlobalStyle/>
-            <Component {...pageProps} />
-          </>
-        </ThemeProvider>
+        <Provider store={reduxStore}>
+          <ThemeProvider theme={theme}>
+            <>
+              <GlobalStyle/>
+              <Component {...pageProps} />
+            </>
+          </ThemeProvider>
+        </Provider>
       </Container>
     )
   }
 }
+
+export default withReduxStore(MyApp)

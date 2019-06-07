@@ -9,8 +9,8 @@ import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 import { Link } from 'react-scroll'
 import Skills from '../Skills/Skills';
-import { Small } from '../responsiveTags'
 import Hero from '../Project/Hero';
+import { Small, MediumAndAbove } from '../responsiveTags'
 
 const BlackBG = styled.div`
   background-color: black;
@@ -119,7 +119,9 @@ function Homepage(props) {
               ))
             }
           </Small>
-          <ProjectCarousel projects={carouselProjects} className="d-none d-md-block"/>
+          <MediumAndAbove>
+            <ProjectCarousel projects={carouselProjects}/>
+          </MediumAndAbove>
           <Education />
           <Skills />
           <Contact/>
@@ -127,7 +129,7 @@ function Homepage(props) {
         </WhiteBG>
       </Slide>
     </BlackBG>
-  );
+  )
 }
 
-export default withTheme(Homepage);
+export default withTheme(Homepage)

@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Container, Row, Col } from 'reactstrap'
 import Minesweeper from  'react-minesweeper'
-import "react-minesweeper/lib/minesweeper.css";
-import Tada from 'react-reveal/Tada';
+import "react-minesweeper/lib/minesweeper.css"
+import Tada from 'react-reveal/Tada'
 import { LargeAndAbove } from '../responsiveTags'
+import { version } from '../../version'
 
 const FooterText = styled.a`
   display: block;
@@ -82,7 +83,7 @@ function Footer() {
         </Row>
         <CopyrightRow>
           <Col xs={12}>
-            &copy; 2019 Kellen Schmidt<span className="mx-2">&#124;</span>Version: v0
+            &copy; 2019 Kellen Schmidt<span className="mx-2">&#124;</span>Version {version || "0"}
           </Col>
         </CopyrightRow>
       </Container>
@@ -90,4 +91,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Footer

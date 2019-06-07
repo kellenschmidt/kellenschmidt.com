@@ -8,4 +8,3 @@ export const Small = props => <Responsive {...props} maxWidth={767} />
 export const MediumAndBelow = props => <Responsive {...props} maxWidth={991} />
 export const MediumAndAbove = props => <Responsive {...props} minWidth={768} />
 export const LargeAndAbove = props => <Responsive {...props} minWidth={992} />
-// export const Default = props => <Responsive {...props} minWidth={768} />;

@@ -4,7 +4,7 @@ import { Row, Col } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
 import { MyContainer as MyContainerI, BigRow as BigRowI, TitleSuper as TitleSuperI, Title as TitleI, TitleSub as TitleSubI, PrimaryButton as PrimaryButtonI, SecondaryButton as SecondaryButtonI, MockImg as MockImgI } from './Project'
 import NavBar from '../NavBar/NavBar';
-import { MediumAndAbove, Small } from '../responsiveTags';
+import { Small, MediumAndAbove } from '../responsiveTags'
 
 const Background = styled.div`
   background-image: linear-gradient(45deg, ${({ theme }) => `${theme.color.primary.normal}, ${theme.color.primary.light}`});

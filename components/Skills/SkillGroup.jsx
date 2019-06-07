@@ -105,7 +105,7 @@ function SkillGroup(props) {
               <Fade delay={500} duration={500}>
                 <Row>
                   <MediumAndAbove>
-                    <Col xs={0} md={5}>
+                    <Col md={5}>
                       <GroupTitle>{skillData.title}</GroupTitle>
                     </Col>
                   </MediumAndAbove>
