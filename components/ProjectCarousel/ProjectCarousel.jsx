@@ -6,6 +6,7 @@ import Fade from 'react-reveal/Fade'
 
 const GrowHover = styled.div`
   transition: transform 0.1s ease-in-out;
+  cursor: pointer;
   &:hover {
     transform: ${({ selected }) => selected ? "scale(1.0)" : "scale(1.1)"};
   }

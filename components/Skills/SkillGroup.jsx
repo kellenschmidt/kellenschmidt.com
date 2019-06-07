@@ -16,15 +16,18 @@ const SkillsWrapper = styled(animated.div)`
   padding: .45rem;
   border-radius: 1.4rem;
   position: absolute;
-
+  left: 0;
   &:hover {
     transform: ${({ open }) => open ? 'scale(1.0)' : 'scale(1.025)'};
   }
-
+  ${({ theme }) => theme.breakpoints.lg`
+    &:hover {
+      transform: scale(1.0);
+    }
+  `}
   ${({ theme }) => theme.breakpoints.md`
     padding: .35rem;
     border-radius: 1.25rem;
-    transform: scale(1.0);
   `}
 `
 const SkillsBox = styled.div`

@@ -14,9 +14,9 @@ const Triangle = styled.div`
   position: relative;
   color: white;
   padding: 2.5rem;
-
   ${({ theme }) => theme.breakpoints.md`
     background: rgba(0,0,0,.6);
+    padding: 1.75rem;
   `}
 `
 const Wrapper = styled.div`
@@ -25,6 +25,12 @@ const Wrapper = styled.div`
 
   ${({ theme }) => theme.breakpoints.md`
     margin: 10rem 0;
+  `}
+`
+const EduText = styled.h2`
+  margin-bottom: 1rem;
+  ${({ theme }) => theme.breakpoints.md`
+    font-size: 1.75rem;
   `}
 `
 
@@ -46,9 +52,9 @@ function Education() {
           </Slide>
           <Slide left>
             <Triangle ref={ref}>
-              <h2 className="mb-3">Southern Methodist University</h2>
-              <h2 className="mb-3">B.S. Computer Science, 2019</h2>
-              <h2 className="mb-0">GPA: 3.81</h2>
+              <EduText>Southern Methodist University</EduText>
+              <EduText>B.S. Computer Science, 2019</EduText>
+              <EduText className="mb-0">GPA: 3.81</EduText>
             </Triangle>
           </Slide>
         </Wrapper>

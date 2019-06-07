@@ -4,9 +4,10 @@ import { Container, Row, Col } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
 import { Element } from 'react-scroll'
 import { Title as TitleImp, TitleSub as TitleSubImp } from '../Project/Project'
+import { LargeAndAbove } from '../responsiveTags';
 
 const Title = styled(TitleImp)`
-  margin: 0 0 1rem;
+  margin-bottom: 1rem;
   padding: 0 1rem;
 
   ${({ theme }) => theme.breakpoints.sm`
@@ -29,7 +30,7 @@ const LastRow = styled(Row)`
   padding-bottom: 15rem;
 
   ${({ theme }) => theme.breakpoints.md`
-    padding-bottom: 8rem;
+    padding-bottom: 10rem;
   `}
 `
 const Highlight = styled.span`
@@ -50,7 +51,9 @@ function About(props) {
         <LastRow>
           <Col xs={{ size: 10, offset: 1 }}>
             <Fade bottom delay={400}>
-              <TitleSub>I love problem solving and am constantly seeking new ways to grow and be challenged. I am a self-motivated learner and am always excited to learn new technologies as is evident by my multitude of awesome personal projects which this website serves to showcase.</TitleSub>
+              <LargeAndAbove>
+                <TitleSub>I love problem solving and am constantly seeking new ways to grow and be challenged. I am a self-motivated learner and am always excited to learn new technologies as is evident by my multitude of awesome personal projects which this website serves to showcase.</TitleSub>
+              </LargeAndAbove>
             </Fade>
           </Col>
         </LastRow>

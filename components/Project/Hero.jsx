@@ -24,7 +24,7 @@ const MyContainer = styled(MyContainerI)`
 const BigRow = styled(BigRowI)`
   ${({ theme }) => theme.breakpoints.md`
     margin: 0;
-    padding-top: 4vh;
+    padding-top: 2vh;
     align-items: initial;
   `}
 `
