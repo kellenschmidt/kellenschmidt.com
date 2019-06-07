@@ -15,7 +15,7 @@ const MyContainer = styled(MyContainerI)`
   display: flex;
   align-items: center;
   ${({ theme }) => theme.breakpoints.md`
-    min-height: 80vh;
+    min-height: 76vh;
     align-items: initial;
     position: relative;
     overflow: hidden;
@@ -31,8 +31,8 @@ const BigRow = styled(BigRowI)`
 const HeroImgRow = styled(Row)`
   position: absolute;
   bottom: -5%;
-  left: -7%;
-  width: 122%;
+  left: -3%;
+  width: 114%;
 `
 const TitleSuper = styled(TitleSuperI)`
   color: rgba(251,253,255,.8);

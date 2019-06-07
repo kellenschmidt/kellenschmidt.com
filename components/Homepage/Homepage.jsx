@@ -83,7 +83,7 @@ const carouselProjects = [
     primaryButton: <Url href="https://kellenschmidt.com">Visit</Url>,
     secondaryButton: "Learn More",
     color: "irGreen",
-    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/v1559690648/hero-green",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/hero-green",
     reverse: false,
   },
 ]
