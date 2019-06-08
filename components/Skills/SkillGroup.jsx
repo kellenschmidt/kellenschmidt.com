@@ -118,7 +118,7 @@ function SkillGroup(props) {
                   <SkillsCol xs={12} md={8} lg={7}>
                     {
                       skillData.skills.map(skill => (
-                        <SkillChip key={skill.name} style={{ ...props }} img={`https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_120/${skill.image}-chip`} text={skill.name}/>
+                        <SkillChip key={skill.name} style={{ ...props }} img={`https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_80/${skill.image}-chip`} text={skill.name}/>
                       ))
                     }
                   </SkillsCol>

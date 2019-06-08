@@ -36,7 +36,7 @@ const mainProjects = [
     primaryButton: <Url href="https://kellenschmidt.com/url">Try it out</Url>,
     secondaryButton: "Learn More",
     color: "usOrange",
-    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/url-shortener-mock",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_648/url-shortener-mock",
     reverse: false,
   },
   {
@@ -47,7 +47,7 @@ const mainProjects = [
     primaryButton: "Learn More",
     secondaryButton: "TBD",
     color: "bmBlue",
-    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/compass-app-mock",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_648/compass-app-mock",
     reverse: true,
   },
 ]
@@ -61,7 +61,7 @@ const carouselProjects = [
     primaryButton: "Learn More",
     secondaryButton: "TBD",
     color: "cap1Red",
-    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/capital-one-mock",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1598/capital-one-mock",
     reverse: false,
   },
   {
@@ -72,7 +72,7 @@ const carouselProjects = [
     primaryButton: "Learn More",
     secondaryButton: "TBD",
     color: "boldBlue",
-    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/southwest-airlines-mock",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1598/southwest-airlines-mock",
     reverse: true,
   },
   {
@@ -83,7 +83,7 @@ const carouselProjects = [
     primaryButton: <Url href="https://kellenschmidt.com">Visit</Url>,
     secondaryButton: "Learn More",
     color: "irGreen",
-    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/hero-green",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1598/hero-green",
     reverse: false,
   },
 ]

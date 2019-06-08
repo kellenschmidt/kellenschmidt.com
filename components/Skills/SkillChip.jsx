@@ -36,7 +36,7 @@ const ChipImg = styled.img`
 function SkillChip(props) {
   return (
     <Chip style={props.style}>
-      <ChipImg src={props.img} alt={props.tet}/>{props.text}
+      <ChipImg src={props.img} alt={props.text}/>{props.text}
     </Chip>
   );
 }
