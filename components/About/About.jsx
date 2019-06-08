@@ -17,11 +17,9 @@ const Title = styled(TitleImp)`
 `
 const TitleSub = styled(TitleSubImp)`
   padding: 0 2rem;
-
+  font-size: 1.25rem;
   ${({ theme }) => theme.breakpoints.md`
     padding: 0rem;
-  `}
-  ${({ theme }) => theme.breakpoints.sm`
     font-size: 1rem;
     line-height: 1.375rem;
   `}

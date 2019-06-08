@@ -86,8 +86,8 @@ function Hero(props) {
             </Fade>
             <Fade bottom delay={delay + 600}>
               <div>
-                <PrimaryButton color={props.color}>{props.primaryButton}</PrimaryButton>
-                <SecondaryButton color={props.color}>{props.secondaryButton}</SecondaryButton>
+                <PrimaryButton color={props.color} onClick={props.primaryButton.onClick}>{props.primaryButton.text}</PrimaryButton>
+                <SecondaryButton color={props.color} onClick={props.secondaryButton.onClick}>{props.secondaryButton.text}</SecondaryButton>
               </div>
             </Fade>
           </Col>

@@ -70,7 +70,7 @@ function ProjectCarousel(props) {
                       <TitleSuper>{project.superText}</TitleSuper>
                       <Title>{project.titleText}</Title>
                       <TitleSub>{project.subText}</TitleSub>
-                      <SecondaryButton color={project.color}>{project.primaryButton}</SecondaryButton>
+                      <SecondaryButton color={project.color} onClick={project.primaryButton.onClick}>{project.primaryButton.text}</SecondaryButton>
                     </Fade>
                   </MyCol>
                 </Row>
