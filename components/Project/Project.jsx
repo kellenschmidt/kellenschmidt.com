@@ -1,8 +1,9 @@
-import React, { useEffect, createRef, useState } from 'react'
+import React from 'react'
 import styled, { css } from 'styled-components'
 import { Container, Row, Col } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
 import { Element } from 'react-scroll'
+import LazyImg from '../LazyImg/LazyImg'
 
 export const MyContainer = styled(Container)`
   margin-bottom: 15rem;
@@ -87,7 +88,8 @@ export const Line = styled.div`
   background-color: ${({ color, theme }) => theme.color[color].normal};
   margin-bottom: 1rem;
 `
-export const MockImg = styled.img`
+// export const MockImg = styled.img`
+export const MockImg = styled(LazyImg)`
   width: 100%;
   ${({ theme }) => theme.breakpoints.md`
     margin-top: 2.5rem;
@@ -95,13 +97,6 @@ export const MockImg = styled.img`
 `
 
 function Project(props) {
-  const imgRef = createRef()
-  const [verticalPhoto, setVerticalPhoto] = useState(true)
-
-  useEffect(() => {
-    setVerticalPhoto(imgRef.current.naturalHeight > imgRef.current.naturalWidth)
-  }, [imgRef])
-
   return (
     <Element name={props.id}>
       <MyContainer id={props.id}>
@@ -128,9 +123,9 @@ function Project(props) {
               </div>
             </Fade>
           </Col>
-          <Col xs={{size: verticalPhoto ? 8 : 12, offset: verticalPhoto ? 2 : 0}} md={{size: 4, order: props.reverse ? 1 : 2, offset: 1}}>
+          <Col xs={{size: props.verticalMock ? 8 : 12, offset: props.verticalMock ? 2 : 0}} md={{size: 4, order: props.reverse ? 1 : 2, offset: 1}}>
             <Fade right={!props.reverse} left={props.reverse} delay={800} duration={1250}>
-              <MockImg src={props.image} alt="Project mockup" ref={imgRef}/>
+              <MockImg src={props.image} alt={`${props.titleText} mockup`}/>
             </Fade>
           </Col>
         </BigRow>

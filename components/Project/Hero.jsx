@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Row, Col } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
@@ -30,7 +30,7 @@ const BigRow = styled(BigRowI)`
 `
 const HeroImgRow = styled(Row)`
   position: absolute;
-  bottom: -5%;
+  bottom: ${({ shiftRow }) => shiftRow ? "-5%" : "0"};
   left: -3%;
   width: 114%;
 `
@@ -69,6 +69,13 @@ const Spacer = styled.div`
 function Hero(props) {
   const delay = 500
 
+  // Negative 'bottom' (as in HeroImgRow) doesn't trigger Intersection Observer
+  // Temporarily set 'bottom' to 0 at render start to trigger Intersection Observer
+  const [shiftRow, setShiftRow] = useState(false)
+  useEffect(() => {
+    setTimeout(() => setShiftRow(true), 500)
+  }, [])
+
   return (
     <Background>
       <NavBar inverse/>
@@ -105,9 +112,9 @@ function Hero(props) {
           </Small>
         </BigRow>
         <Small>
-          <HeroImgRow>
+          <HeroImgRow shiftRow={shiftRow}>
             <Fade bottom delay={delay + 800} duration={1250}>
-              <MockImg src={`${props.image}`} alt="Project mockup" />
+              <MockImg src={props.image} alt="Project mockup" />
             </Fade>
           </HeroImgRow>
         </Small>

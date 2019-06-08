@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import LazyImg from '../LazyImg/LazyImg';
 
 const Chip = styled.div`
   display: inline-block;
@@ -22,12 +23,11 @@ const Chip = styled.div`
     box-shadow: none;
   `}
 `
-const ChipImg = styled.img`
+const ChipImg = styled(LazyImg)`
   float: left;
   margin: 0 0.6rem 0 -1rem;
   border-radius: 50%;
   height: 2.5rem;
-
   ${({ theme }) => theme.breakpoints.md`
     height: 2rem;
   `}

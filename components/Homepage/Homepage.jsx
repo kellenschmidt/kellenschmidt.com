@@ -39,6 +39,7 @@ function Homepage(props) {
       color: "usOrange",
       image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_648/url-shortener-mock",
       reverse: false,
+      verticalMock: true,
       modalBody: <>
         <h5>What I did</h5>
         <p class="mb-0">Built the entire application, both front-end and back-end on my own from scratch</p>
@@ -81,6 +82,7 @@ function Homepage(props) {
       color: "bmBlue",
       image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_648/compass-app-mock",
       reverse: true,
+      verticalMock: true,
       modalBody: "TBD..."
     },
   ]
@@ -98,6 +100,7 @@ function Homepage(props) {
       color: "cap1Red",
       image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1597/capital-one-mock",
       reverse: false,
+      verticalMock: false,
       modalBody: <>
         <h5>What I did</h5>
         <ul>
@@ -128,6 +131,7 @@ function Homepage(props) {
       color: "boldBlue",
       image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1597/southwest-airlines-mock",
       reverse: true,
+      verticalMock: false,
       modalBody: <>
         <h5>What I did</h5>
         <ul>
@@ -164,6 +168,7 @@ function Homepage(props) {
       color: "irGreen",
       image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1597/hero-green",
       reverse: false,
+      verticalMock: false,
       modalBody: "TBD..."
     },
   ]
@@ -188,6 +193,7 @@ function Homepage(props) {
     color: "primary",
     image: `https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1597/hero-${props.theme.color.name}`,
     reverse: false,
+    verticalMock: false,
   }
 
   const [modalDataKey, setModalDataKey] = useState(undefined)

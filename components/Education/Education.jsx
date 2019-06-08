@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import { Container } from 'reactstrap'
 import Slide from 'react-reveal/Slide'
 import { Element } from 'react-scroll'
+import LazyImg from '../LazyImg/LazyImg'
 
-const Img = styled.img`
+const Img = styled(LazyImg)`
   position: absolute;
   object-fit: cover;
 `
