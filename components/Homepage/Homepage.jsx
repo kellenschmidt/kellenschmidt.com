@@ -61,7 +61,7 @@ const carouselProjects = [
     primaryButton: "Learn More",
     secondaryButton: "TBD",
     color: "cap1Red",
-    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1598/capital-one-mock",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1597/capital-one-mock",
     reverse: false,
   },
   {
@@ -72,7 +72,7 @@ const carouselProjects = [
     primaryButton: "Learn More",
     secondaryButton: "TBD",
     color: "boldBlue",
-    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1598/southwest-airlines-mock",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1597/southwest-airlines-mock",
     reverse: true,
   },
   {
@@ -83,7 +83,7 @@ const carouselProjects = [
     primaryButton: <Url href="https://kellenschmidt.com">Visit</Url>,
     secondaryButton: "Learn More",
     color: "irGreen",
-    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1598/hero-green",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1597/hero-green",
     reverse: false,
   },
 ]
@@ -97,7 +97,7 @@ function Homepage(props) {
     primaryButton: <Url href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</Url>,
     secondaryButton: <Link to="contact" smooth={true} duration={750} offset={-160}>Contact</Link>,
     color: "primary",
-    image: `https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/hero-${props.theme.color.name}`,
+    image: `https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto,c_scale,w_1597/hero-${props.theme.color.name}`,
     reverse: false,
   }
   
