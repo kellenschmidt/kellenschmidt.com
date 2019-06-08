@@ -143,7 +143,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: Gilroy;
+    font-family: Gilroy, sans-serif;
   }
 `
 

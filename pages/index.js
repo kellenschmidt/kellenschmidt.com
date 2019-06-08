@@ -57,7 +57,7 @@ const Index = (props) => {
         <link rel="preload" href="/static/Gilroy-Regular.woff2" as="font"/>
         <link rel="preload" href="/static/Gilroy-Medium.woff2" as="font"/>
         <link rel="preload" href="/static/Gilroy-SemiBold.woff2" as="font"/>
-        <link rel="preload" href="/static/Gilroy-Bold.woff22" as="font"/>
+        <link rel="preload" href="/static/Gilroy-Bold.woff2" as="font"/>
       </Head>
       <ResponsiveContext.Provider value={{ width: size.width || props.fakeWidth || 500 }}>
         <Homepage/>
