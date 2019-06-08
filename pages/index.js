@@ -50,7 +50,14 @@ const Index = (props) => {
         <title>Kellen Schmidt | Personal Website</title>
         <meta name="description"
           content="Hey! This is my personal website that I created from scratch to share the awesome projects I'm working on. Check it out!"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+        <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin/>
+        <link rel="preload" href="/static/Gilroy-Regular.woff2" as="font"/>
+        <link rel="preload" href="/static/Gilroy-Medium.woff2" as="font"/>
+        <link rel="preload" href="/static/Gilroy-SemiBold.woff2" as="font"/>
+        <link rel="preload" href="/static/Gilroy-Bold.woff22" as="font"/>
       </Head>
       <ResponsiveContext.Provider value={{ width: size.width || props.fakeWidth || 500 }}>
         <Homepage/>
