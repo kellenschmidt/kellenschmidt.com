@@ -198,7 +198,7 @@ function Homepage(props) {
 
   const [modalDataKey, setModalDataKey] = useState(undefined)
   const { titleText: title, modalBody: body, superText } = [...mainProjects, ...carouselProjects].find(x => x.key === (modalDataKey || "url-shortener"))
-  const modalTitle = superText.includes("|") ? title : <><h3 className="d-inline-block m-0">{title}</h3><p className="d-inline-block m-0">, {superText}</p></>
+  const modalTitle = superText.includes("|") ? <h3 className="m-0">{title}</h3> : <><h3 className="d-inline-block m-0">{title},&nbsp;</h3><p className="d-inline-block m-0">{superText}</p></>
   
   const closeModal = () => {
     setModalDataKey(undefined)
