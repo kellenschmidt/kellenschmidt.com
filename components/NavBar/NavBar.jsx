@@ -99,8 +99,8 @@ function NavBar(props) {
               <MobileNavLink to="skills" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Skills</MobileNavLink>
               <MobileNavLink to="contact" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Contact</MobileNavLink>
               <ColorBar />
-              <Icon href="https://linkedin.com/in/kellens" target="_blank" rel="noopener noreferrer"><FaLinkedin/></Icon>
-              <Icon href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer"><FaFilePdf/></Icon>
+              <Icon href="https://linkedin.com/in/kellens" target="_blank" rel="noopener noreferrer" aria-label="Go to Kellen's Linkedin"><FaLinkedin/></Icon>
+              <Icon href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Kellen's Resume"><FaFilePdf/></Icon>
             </Col>
           </Row>
         </Container>

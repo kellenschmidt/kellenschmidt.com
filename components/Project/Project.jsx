@@ -14,45 +14,37 @@ export const BigRow = styled(Row)`
   display: flex;
   align-items: center;
 `
-export const PrimaryButton = styled.button`
-  padding: 12px 28px;
-  border-radius: 8px;
-  color: white;
+const Button = styled.button`
+  padding: .75rem 1.75rem;
+  border-radius: .5rem;
   font-weight: bold;
   border: none;
-  margin-right: 1rem;
-  background-image: linear-gradient(45deg,#f35626,#feab3a); 
-  box-shadow: 0 0 10px 2px hsla(184.14634146341464,99.19%,51.37%,.4);
-  transition: transform 0.1s ease-in-out;
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  ${({ color, theme }) => css`
-    background-image: linear-gradient(45deg, ${theme.color[color].normal}, ${theme.color[color].light}); 
-    box-shadow: 0 0 10px 2px ${theme.color[color].light};
-  `}
-`
-export const SecondaryButton = styled.button`
-  padding: 12px 28px;
-  border-radius: 8px;
-  background-color: white;
-  color: ${({ color, theme }) => theme.color[color].normal};
-  font-weight: bold;
-  border: none;
-  box-shadow: 0 0 14px 2px rgba(0,0,0,.11);
   transition: transform 100ms ease-in-out;
   &:hover {
     transform: scale(1.1);
   }
 `
+export const PrimaryButton = styled(Button)`
+  color: white;
+  background-image: linear-gradient(45deg,#f35626,#feab3a); 
+  box-shadow: 0 0 10px 2px hsla(184.14634146341464,99.19%,51.37%,.4);
+  margin-right: 1rem;
+  ${({ color, theme }) => css`
+    background-image: linear-gradient(45deg, ${theme.color[color].normal}, ${theme.color[color].light}); 
+    box-shadow: 0 0 10px 2px ${theme.color[color].light};
+  `}
+`
+export const SecondaryButton = styled(Button)`
+  color: ${({ color, theme }) => theme.color[color].normal};
+  background-color: white;
+  box-shadow: 0 0 14px 2px rgba(0,0,0,.11);
+`
 export const TitleSuper = styled.p`
   font-weight: 600;
   color: rgba(48,53,70,.75);
-  margin: 15px 0;
+  margin: 1rem 0;
   font-size: 1.5rem;
   line-height: 1.5rem;
-
   ${({ theme }) => theme.breakpoints.sm`
     font-size: 1.125rem;
     line-height: 1.375rem;
@@ -63,8 +55,7 @@ export const Title = styled.p`
   color: hsla(226.36363636363637,18.64%,23.14%,1);
   font-size: 2.625rem;
   line-height: 3.125rem;
-  margin: 5px 0 15px;
-  
+  margin: .3125rem 0 1rem;
   ${({ theme }) => theme.breakpoints.lg`
     font-size: 2rem;
     line-height: 2.25rem;
@@ -80,8 +71,7 @@ export const TitleSub = styled.p`
   color: hsla(226.36363636363637,18.64%,23.14%,.7);
   font-size: 1.125rem;
   line-height: 1.5rem;
-  margin-bottom: 25px;
-  
+  margin-bottom: 1.5rem;
   ${({ theme }) => theme.breakpoints.md`
     font-size: 1.125rem;
     line-height: 1.5rem;
@@ -93,13 +83,12 @@ export const TitleSub = styled.p`
 `
 export const Line = styled.div`
   width: 3.75rem;
-  height: 3px;
+  height: .1875rem;
   background-color: ${({ color, theme }) => theme.color[color].normal};
   margin-bottom: 1rem;
 `
 export const MockImg = styled.img`
   width: 100%;
-
   ${({ theme }) => theme.breakpoints.md`
     margin-top: 2.5rem;
   `}

@@ -120,7 +120,7 @@ const skillGroups = [
 const MyContainer = styled(Container)`
   position: relative;
   height: 50vh;
-  top: 0px;
+  top: 0;
 `
 
 function Skills(props) {

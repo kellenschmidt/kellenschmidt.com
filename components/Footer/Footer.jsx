@@ -11,7 +11,7 @@ const FooterText = styled.a`
   display: block;
   color: hsla(226.36363636363637,18.64%,23.14%,.7) !important;
   line-height: 1.375rem;
-  padding: 3px 0; 
+  padding: .1875rem 0; 
 `
 const FooterLink = styled(FooterText)`
   &:hover{

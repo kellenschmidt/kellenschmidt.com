@@ -53,10 +53,10 @@ function Contact() {
         </CenterRow>
         <CenterRow>
           <Fade>
-            <Avatar color="#0077B5" href="https://linkedin.com/in/kellens" target="_blank" rel="noopener noreferrer"><FaLinkedin/></Avatar>
-            <Avatar color="black" href="https://github.com/kellenschmidt" target="_blank" rel="noopener noreferrer"><FaGithub/></Avatar>
-            <Avatar color="#ea4335" href="mailto: kellenschmidt31@gmail.com"><MdEmail/></Avatar>
-            <Avatar color="#833ab4" href="https://instagram.com/kellen_schmidt31" target="_blank" rel="noopener noreferrer"><FaInstagram/></Avatar>
+            <Avatar color="#0077B5" href="https://linkedin.com/in/kellens" target="_blank" rel="noopener noreferrer" aria-label="Go to Kellen's Linkedin"><FaLinkedin/></Avatar>
+            <Avatar color="black" href="https://github.com/kellenschmidt" target="_blank" rel="noopener noreferrer" aria-label="Go to Kellen's GitHub"><FaGithub/></Avatar>
+            <Avatar color="#ea4335" href="mailto: kellenschmidt31@gmail.com" aria-label="Send Kellen an email"><MdEmail/></Avatar>
+            <Avatar color="#833ab4" href="https://instagram.com/kellen_schmidt31" target="_blank" rel="noopener noreferrer" aria-label="Go to Kellen's Instagram"><FaInstagram/></Avatar>
           </Fade>
         </CenterRow>
       </ColorContainer>

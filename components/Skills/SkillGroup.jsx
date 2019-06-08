@@ -42,11 +42,14 @@ const SkillsBox = styled.div`
 const GridBox = styled(animated.div)`
   display: grid;
   grid-template-columns: repeat(1, minmax(100px, 1fr));
-  grid-gap: 25px;
-  padding: 25px;
+  grid-gap: 1.5rem;
+  padding: 1.5rem;
   will-change: width, height;
   width: 100%;
   height: 100%;
+  ${({ theme }) => theme.breakpoints.md`
+    grid-gap: 1rem;
+  `}
 `
 const Item = styled(animated.div)`
   width: 100%;
@@ -56,7 +59,7 @@ const Item = styled(animated.div)`
   background-position: left center;
   background-repeat: no-repeat;
   background-size: contain;
-  border-radius: 5px;
+  border-radius: .365rem;
   will-change: transform, opacity;
   width: ${({ score }) => `${score}%`};
 `
@@ -108,11 +111,11 @@ function SkillGroup(props) {
               <Fade delay={500} duration={500}>
                 <Row>
                   <MediumAndAbove>
-                    <Col md={5}>
+                    <Col md={4} lg={5}>
                       <GroupTitle>{skillData.title}</GroupTitle>
                     </Col>
                   </MediumAndAbove>
-                  <SkillsCol xs={12} md={7}>
+                  <SkillsCol xs={12} md={8} lg={7}>
                     {
                       skillData.skills.map(skill => (
                         <SkillChip key={skill.name} style={{ ...props }} img={`https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_120/${skill.image}-chip`} text={skill.name}/>

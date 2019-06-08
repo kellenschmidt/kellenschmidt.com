@@ -8,18 +8,17 @@ const Chip = styled.div`
   height: 2.5rem;
   line-height: 2.5rem;
   border-radius: 1.5rem;
-  margin: 0 .5rem;
+  margin-right: 1rem;
   background-color: #d2d2d2;
   color: black;
   min-width: fit-content;
-
   ${({ theme }) => theme.breakpoints.md`
     font-size: .75rem;
     padding: 0 .75rem;
     height: 2rem;
     line-height: 2rem;
     border-radius: 1.5rem;
-    margin: 0 .5rem;
+    margin-right: .75rem;
     box-shadow: none;
   `}
 `
@@ -37,7 +36,7 @@ const ChipImg = styled.img`
 function SkillChip(props) {
   return (
     <Chip style={props.style}>
-      <ChipImg src={props.img} />{props.text}
+      <ChipImg src={props.img} alt={props.tet}/>{props.text}
     </Chip>
   );
 }
