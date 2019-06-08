@@ -98,47 +98,47 @@ const sizes = {
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Thin.otf);
+    src: url(/static/Gilroy-Thin.woff2);
     font-weight: 100;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-UltraLight.otf);
+    src: url(/static/Gilroy-UltraLight.woff2);
     font-weight: 200;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Light.otf);
+    src: url(/static/Gilroy-Light.woff2);
     font-weight: 300;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Regular.ttf);
+    src: url(/static/Gilroy-Regular.woff2);
     font-weight: 400;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Medium.ttf);
+    src: url(/static/Gilroy-Medium.woff2);
     font-weight: 500;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-SemiBold.otf);
+    src: url(/static/Gilroy-SemiBold.woff2);
     font-weight: 600;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Bold.ttf);
+    src: url(/static/Gilroy-Bold.woff2);
     font-weight: 700;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-ExtraBold.otf);
+    src: url(/static/Gilroy-ExtraBold.woff2);
     font-weight: 800;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Heavy.ttf);
+    src: url(/static/Gilroy-Heavy.woff2);
     font-weight: 900;
   }
 
