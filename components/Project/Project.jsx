@@ -88,7 +88,6 @@ export const Line = styled.div`
   background-color: ${({ color, theme }) => theme.color[color].normal};
   margin-bottom: 1rem;
 `
-// export const MockImg = styled.img`
 export const MockImg = styled(LazyImg)`
   width: 100%;
   ${({ theme }) => theme.breakpoints.md`

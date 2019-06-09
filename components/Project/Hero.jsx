@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Row, Col } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
-import { MyContainer as MyContainerI, BigRow as BigRowI, TitleSuper as TitleSuperI, Title as TitleI, TitleSub as TitleSubI, PrimaryButton as PrimaryButtonI, SecondaryButton as SecondaryButtonI, MockImg as MockImgI } from './Project'
+import { MyContainer as MyContainerI, BigRow as BigRowI, TitleSuper as TitleSuperI, Title as TitleI, TitleSub as TitleSubI, PrimaryButton as PrimaryButtonI, SecondaryButton as SecondaryButtonI } from './Project'
 import NavBar from '../NavBar/NavBar';
 import { Small, MediumAndAbove } from '../responsiveTags'
 
@@ -30,7 +30,7 @@ const BigRow = styled(BigRowI)`
 `
 const HeroImgRow = styled(Row)`
   position: absolute;
-  bottom: ${({ shiftRow }) => shiftRow ? "-5%" : "0"};
+  bottom: -5%;
   left: -3%;
   width: 114%;
 `
@@ -55,7 +55,7 @@ const SecondaryButton = styled(SecondaryButtonI)`
   background: hsla(0,0%,100%,.27);
   font-size: 1.125rem;
 `
-const MockImg = styled(MockImgI)`
+const HeroImg = styled.img`
   width: 210%;
   ${({ theme }) => theme.breakpoints.md`
     width: 100%;
@@ -68,14 +68,6 @@ const Spacer = styled.div`
 
 function Hero(props) {
   const delay = 500
-
-  // Negative 'bottom' (as in HeroImgRow) doesn't trigger Intersection Observer
-  // Temporarily set 'bottom' to 0 at render start to trigger Intersection Observer
-  const [shiftRow, setShiftRow] = useState(false)
-  useEffect(() => {
-    const timer = setTimeout(() => setShiftRow(true), 1100)
-    return () => clearTimeout(timer)
-  })
 
   return (
     <Background>
@@ -102,7 +94,7 @@ function Hero(props) {
           <MediumAndAbove>
             <Col xs={12} md={6}>
               <Fade right delay={delay + 600} duration={1000}>
-                <MockImg src={props.image} alt="Hero mockup" />
+                <HeroImg src={props.image} alt="Hero mockup" />
               </Fade>
             </Col>
           </MediumAndAbove>
@@ -113,9 +105,9 @@ function Hero(props) {
           </Small>
         </BigRow>
         <Small>
-          <HeroImgRow shiftRow={shiftRow}>
+          <HeroImgRow>
             <Fade bottom delay={delay + 600} duration={1000}>
-              <MockImg src={props.image} alt="Hero mockup" />
+              <HeroImg src={props.image} alt="Hero mockup" />
             </Fade>
           </HeroImgRow>
         </Small>
