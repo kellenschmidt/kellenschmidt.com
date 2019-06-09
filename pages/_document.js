@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
   static async getInitialProps (ctx) {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
+    const isProduction = process.env.NODE_ENV === 'production'
 
     try {
       ctx.renderPage = () =>
@@ -15,6 +16,7 @@ export default class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx)
       return {
         ...initialProps,
+        isProduction,
         styles: (
           <>
             {initialProps.styles}
@@ -27,6 +29,17 @@ export default class MyDocument extends Document {
     }
   }
 
+  setGoogleTags = () => {
+    return {
+      __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-103005707-6');
+      `
+    }
+  }
+
   render() {
     return (
       <Html lang="en">
@@ -34,6 +47,17 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          {
+            this.props.isProduction && (
+              <>
+                <script
+                  async
+                  src="https://www.googletagmanager.com/gtag/js?id=UA-103005707-6"
+                />
+                <script dangerouslySetInnerHTML={this.setGoogleTags()} />
+              </>
+            )
+          }
         </body>
       </Html>
     )
