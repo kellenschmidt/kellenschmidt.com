@@ -73,7 +73,8 @@ function Hero(props) {
   // Temporarily set 'bottom' to 0 at render start to trigger Intersection Observer
   const [shiftRow, setShiftRow] = useState(false)
   useEffect(() => {
-    setTimeout(() => setShiftRow(true), 1500)
+    const timer = setTimeout(() => setShiftRow(true), 1100)
+    return () => clearTimeout(timer)
   })
 
   return (

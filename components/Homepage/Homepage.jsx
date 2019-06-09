@@ -180,7 +180,7 @@ function Homepage(props) {
     subText: "I'm a software engineer with an interest in full-stack web development. Check out my awesome projects and work experience!",
     primaryButton: {
       onClick: () => window.open('https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf', '_blank'),
-      text: "Resume",
+      text: "Resumé",
     },
     secondaryButton: {
       onClick: () => scroller.scrollTo('contact', {

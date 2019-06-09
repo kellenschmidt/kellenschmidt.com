@@ -7,7 +7,7 @@ import { MediumAndBelow, LargeAndAbove } from '../responsiveTags'
 import { FaLinkedin, FaFilePdf, FaBars } from "react-icons/fa";
 
 const LogoTitle = styled.h3`
-  font-family: 'Rock Salt', cursive;
+  font-family: 'Rock Salt', sans-serif;
   margin: 0;
   color: white;
 `
