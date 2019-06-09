@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { Container, Row, Col } from 'reactstrap'
 import Fade from 'react-reveal/Fade'
 import { Element } from 'react-scroll'
 import LazyImg from '../LazyImg/LazyImg'
+import { Motion, spring } from 'react-motion'
 
 export const MyContainer = styled(Container)`
   margin-bottom: 15rem;
@@ -96,23 +97,27 @@ export const MockImg = styled(LazyImg)`
 `
 
 function Project(props) {
+  const [revealed, setRevealed] = useState(false)
+
+  const handleReveal = () => {
+    const timer = setTimeout(() => {
+      setRevealed(true)
+    }, 1000)
+    
+    return () => clearTimeout(timer)
+  }
+
   return (
     <Element name={props.id}>
       <MyContainer id={props.id}>
         <BigRow>
-          <Col xs={12} md={{size: 6, order: props.reverse ? 2 : 1, offset: props.reverse ? 1 : 0}}>
-            <Fade bottom delay={0} duration={750}>
-              <Line color={props.color}/>
-              <TitleSuper>{props.superText}</TitleSuper>
-            </Fade>
-            <Fade bottom opposite delay={150} duration={750}>
-              <Title>{props.titleText}</Title>
-            </Fade>
-            <Fade bottom delay={300} duration={750}>
-              <TitleSub>{props.subText}</TitleSub>
-            </Fade>
-            <Fade bottom delay={450} duration={750}>
+          <Col xs={12} md={{ size: 6, order: props.reverse ? 2 : 1, offset: props.reverse ? 1 : 0 }}>
+            <Fade bottom cascade duration={750} distance="500%" onReveal={handleReveal}>
               <div>
+                <Line color={props.color}/>
+                <TitleSuper>{props.superText}</TitleSuper>
+                <Title>{props.titleText}</Title>
+                <TitleSub>{props.subText}</TitleSub>
                 <PrimaryButton color={props.color} onClick={props.primaryButton.onClick}>{props.primaryButton.text}</PrimaryButton>
                 {
                   props.secondaryButton && (
@@ -122,15 +127,20 @@ function Project(props) {
               </div>
             </Fade>
           </Col>
-          <Col xs={{size: props.verticalMock ? 8 : 12, offset: props.verticalMock ? 2 : 0}} md={{size: 4, order: props.reverse ? 1 : 2, offset: 1}}>
-            <Fade right={!props.reverse} left={props.reverse} delay={600} duration={1000}>
-              <MockImg src={props.image} alt={`${props.titleText} mockup`}/>
-            </Fade>
+          <Col xs={{ size: props.verticalMock ? 8 : 12, offset: props.verticalMock ? 2 : 0 }} md={{ size: 4, order: props.reverse ? 1 : 2, offset: 1 }}>
+            <Motion style={{ x: spring(revealed ? 0 : 1) }}>
+              {({ x }) => (
+                <MockImg src={props.image} alt={`${props.titleText} mockup`} style={{
+                  transform: `translateX(${x*200}px)`,
+                  opacity: 1-x,
+                }} />
+              )}
+            </Motion>
           </Col>
         </BigRow>
       </MyContainer>
     </Element>
-  );
+  )
 }
 
-export default Project;
+export default Project

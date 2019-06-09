@@ -4,6 +4,7 @@ import Homepage from '../components/Homepage/Homepage'
 import { Context as ResponsiveContext } from 'react-responsive'
 import { connect } from 'react-redux'
 import fonts from '../lib/fonts'
+import config from 'react-reveal/globals';
 
 const mapStateToProps = (state) => {
   return {
@@ -25,6 +26,8 @@ const Index = (props) => {
     const [windowSize, setWindowSize] = useState(getSize);
 
     useEffect(() => {
+      config({ ssrFadeout: true });
+
       fonts()
 
       if (!isClient) {

@@ -42,7 +42,7 @@ function Homepage(props) {
       verticalMock: true,
       modalBody: <>
         <h5>What I did</h5>
-        <p class="mb-0">Built the entire application, both front-end and back-end on my own from scratch</p>
+        <p className="mb-0">Built the entire application, both front-end and back-end on my own from scratch</p>
         <ul>
           <li>Implemented an Angular 2 front-end using Bootstrap 4, Material Design, and Sass</li>
           <li>Designed and constructed a MySQL database to store the URL and user data</li>
