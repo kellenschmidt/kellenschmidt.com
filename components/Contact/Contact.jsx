@@ -47,12 +47,12 @@ function Contact() {
     <Element name="contact">
       <ColorContainer fluid color="primary">
         <CenterRow>
-          <Fade>
+          <Fade duration={750}>
             <Title className="text-white">Let's Connect!</Title>
           </Fade>
         </CenterRow>
         <CenterRow>
-          <Fade>
+          <Fade duration={750}>
             <Avatar color="#0077B5" href="https://linkedin.com/in/kellens" target="_blank" rel="noopener noreferrer" aria-label="Go to Kellen's Linkedin"><FaLinkedin/></Avatar>
             <Avatar color="black" href="https://github.com/kellenschmidt" target="_blank" rel="noopener noreferrer" aria-label="Go to Kellen's GitHub"><FaGithub/></Avatar>
             <Avatar color="#ea4335" href="mailto: kellenschmidt31@gmail.com" aria-label="Send Kellen an email"><MdEmail/></Avatar>

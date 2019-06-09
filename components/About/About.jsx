@@ -41,14 +41,14 @@ function About(props) {
       <Container className="text-center" id="about">
         <Row>
           <Col xs={12}>
-            <Fade bottom delay={200}>
+            <Fade bottom delay={150} duration={750}>
               <Title>I am a software developer with a <Highlight>passion</Highlight> for learning and a <Highlight>curiosity</Highlight> with technology.</Title>
             </Fade>
           </Col>
         </Row>
         <LastRow>
           <Col xs={{ size: 10, offset: 1 }}>
-            <Fade bottom delay={400}>
+            <Fade bottom delay={300} duration={750}>
               <LargeAndAbove>
                 <TitleSub>I love problem solving and am constantly seeking new ways to grow and be challenged. I am a self-motivated learner and am always excited to learn new technologies as is evident by my multitude of awesome personal projects which this website serves to showcase.</TitleSub>
               </LargeAndAbove>

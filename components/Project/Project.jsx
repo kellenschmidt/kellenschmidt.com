@@ -102,17 +102,17 @@ function Project(props) {
       <MyContainer id={props.id}>
         <BigRow>
           <Col xs={12} md={{size: 6, order: props.reverse ? 2 : 1, offset: props.reverse ? 1 : 0}}>
-            <Fade bottom delay={0}>
+            <Fade bottom delay={0} duration={750}>
               <Line color={props.color}/>
               <TitleSuper>{props.superText}</TitleSuper>
             </Fade>
-            <Fade bottom opposite delay={200}>
+            <Fade bottom opposite delay={150} duration={750}>
               <Title>{props.titleText}</Title>
             </Fade>
-            <Fade bottom delay={400}>
+            <Fade bottom delay={300} duration={750}>
               <TitleSub>{props.subText}</TitleSub>
             </Fade>
-            <Fade bottom delay={600}>
+            <Fade bottom delay={450} duration={750}>
               <div>
                 <PrimaryButton color={props.color} onClick={props.primaryButton.onClick}>{props.primaryButton.text}</PrimaryButton>
                 {
@@ -124,7 +124,7 @@ function Project(props) {
             </Fade>
           </Col>
           <Col xs={{size: props.verticalMock ? 8 : 12, offset: props.verticalMock ? 2 : 0}} md={{size: 4, order: props.reverse ? 1 : 2, offset: 1}}>
-            <Fade right={!props.reverse} left={props.reverse} delay={800} duration={1250}>
+            <Fade right={!props.reverse} left={props.reverse} delay={600} duration={1000}>
               <MockImg src={props.image} alt={`${props.titleText} mockup`}/>
             </Fade>
           </Col>

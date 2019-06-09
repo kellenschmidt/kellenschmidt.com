@@ -48,7 +48,7 @@ function Education() {
     <Element name="education">
       <Container>
         <Wrapper>
-          <Slide right>
+          <Slide right duration={750}>
             <Img src="https://res.cloudinary.com/kellenscloud/image/upload/f_auto,q_auto/v1559747722/smu1" alt="SMU" className="shadow-lg" width={imgSize.width} height={imgSize.height}/>
           </Slide>
           <Slide left>

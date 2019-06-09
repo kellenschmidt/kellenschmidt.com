@@ -43,7 +43,7 @@ function ProjectCarousel(props) {
   
   return (
     <Container className={props.className}>
-      <Fade bottom>
+      <Fade bottom duration={750}>
         <Fade opposite when={selected === -1} duration={500}>
           <LearnMoreDiv>
             <span>(Click below to learn more)</span>
@@ -54,7 +54,7 @@ function ProjectCarousel(props) {
         {
           props.projects.map((project, idx) => (
             <MyCol xs={selected === idx ? 8 : selected === -1 ? 4 : 2} onClick={() => setSelected(idx)} key={project.key}>
-              <Fade bottom delay={idx * 200}>
+              <Fade bottom delay={idx * 150} duration={750}>
                 <Row>
                   <MyCol xs={{ size: selected === idx ? 12 : 12}} className="mx-auto">
                     <GrowHover selected={selected === idx}>

@@ -63,7 +63,7 @@ const MockImg = styled(MockImgI)`
   `}
 `
 const Spacer = styled.div`
-  height: 66vw;
+  height: 69vw;
 `
 
 function Hero(props) {
@@ -73,8 +73,8 @@ function Hero(props) {
   // Temporarily set 'bottom' to 0 at render start to trigger Intersection Observer
   const [shiftRow, setShiftRow] = useState(false)
   useEffect(() => {
-    setTimeout(() => setShiftRow(true), 1000)
-  }, [])
+    setTimeout(() => setShiftRow(true), 1500)
+  })
 
   return (
     <Background>
@@ -82,16 +82,16 @@ function Hero(props) {
       <MyContainer>
         <BigRow noGutters>
           <Col xs={12} md={6}>
-            <Fade bottom delay={delay + 0}>
+            <Fade bottom delay={delay + 0} duration={750}>
               <TitleSuper>{props.superText}</TitleSuper>
             </Fade>
-            <Fade bottom opposite delay={delay + 200}>
+            <Fade bottom opposite delay={delay + 150} duration={750}>
               <Title>{props.titleText}</Title>
             </Fade>
-            <Fade bottom delay={delay + 400}>
+            <Fade bottom delay={delay + 300} duration={750}>
               <TitleSub>{props.subText}</TitleSub>
             </Fade>
-            <Fade bottom delay={delay + 600}>
+            <Fade bottom delay={delay + 450} duration={750}>
               <div>
                 <PrimaryButton color={props.color} onClick={props.primaryButton.onClick}>{props.primaryButton.text}</PrimaryButton>
                 <SecondaryButton color={props.color} onClick={props.secondaryButton.onClick}>{props.secondaryButton.text}</SecondaryButton>
@@ -100,8 +100,8 @@ function Hero(props) {
           </Col>
           <MediumAndAbove>
             <Col xs={12} md={6}>
-              <Fade right delay={delay + 800} duration={1250}>
-                <MockImg src={props.image} alt="Project mockup" />
+              <Fade right delay={delay + 600} duration={1000}>
+                <MockImg src={props.image} alt="Hero mockup" />
               </Fade>
             </Col>
           </MediumAndAbove>
@@ -113,8 +113,8 @@ function Hero(props) {
         </BigRow>
         <Small>
           <HeroImgRow shiftRow={shiftRow}>
-            <Fade bottom delay={delay + 800} duration={1250}>
-              <MockImg src={props.image} alt="Project mockup" />
+            <Fade bottom delay={delay + 600} duration={1000}>
+              <MockImg src={props.image} alt="Hero mockup" />
             </Fade>
           </HeroImgRow>
         </Small>
