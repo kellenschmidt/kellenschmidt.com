@@ -12,15 +12,22 @@ import { Small, MediumAndAbove } from '../responsiveTags'
 import { scroller } from 'react-scroll'
 import InfoModal from '../InfoModal/InfoModal'
 
-const BlackBG = styled.div`
+const PreloadBg = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  background-color: black;
+  background-color: rgb(49,53,69);
   width: 100vw;
   height: ${ ({ hide }) => hide ? 0 : 100 }vh;
   z-index: 3;
-  transition: height 400ms;
+  transition-delay: 250ms;
+  transition-duration: 400ms;
+  transition-property: height;
+  ${({ theme }) => theme.breakpoints.md`
+    height: 100vh;
+    opacity: ${ ({ hide }) => hide ? 0 : 1 };
+    transition-property: opacity;
+  `}
 `
 const WhiteBG = styled.div`
   background-color: white;
@@ -212,15 +219,12 @@ function Homepage(props) {
   }
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setPageLoaded(true)
-    }, 200)
-    return () => clearTimeout(timer)
+    setPageLoaded(true)
   }, [])
   
   return (
     <>
-      <BlackBG hide={pageLoaded}/>
+      <PreloadBg hide={pageLoaded}/>
       <WhiteBG>
         <Hero {...heroProject}/>
         <About />
