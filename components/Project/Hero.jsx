@@ -67,7 +67,7 @@ const Spacer = styled.div`
 `
 
 function Hero(props) {
-  const delay = 500
+  const delay = 600
 
   return (
     <Background>

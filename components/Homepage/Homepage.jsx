@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, { withTheme } from 'styled-components'
-import Slide from 'react-reveal/Slide'
 import About from '../About/About';
 import Project from '../Project/Project';
 import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
@@ -11,14 +10,21 @@ import Skills from '../Skills/Skills';
 import Hero from '../Project/Hero';
 import { Small, MediumAndAbove } from '../responsiveTags'
 import { scroller } from 'react-scroll'
-import InfoModal from '../InfoModal/InfoModal';
+import InfoModal from '../InfoModal/InfoModal'
 
 const BlackBG = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
   background-color: black;
-  overflow: hidden;
+  width: 100vw;
+  height: ${ ({ hide }) => hide ? 0 : 100 }vh;
+  z-index: 3;
+  transition: height 400ms;
 `
 const WhiteBG = styled.div`
   background-color: white;
+  overflow: hidden;
 `
 
 function Homepage(props) {
@@ -196,6 +202,7 @@ function Homepage(props) {
     verticalMock: false,
   }
 
+  const [pageLoaded, setPageLoaded] = useState(false)
   const [modalDataKey, setModalDataKey] = useState(undefined)
   const { titleText: title, modalBody: body, superText } = [...mainProjects, ...carouselProjects].find(x => x.key === (modalDataKey || "url-shortener"))
   const modalTitle = superText.includes("|") ? <h3 className="m-0">{title}</h3> : <><h3 className="d-inline-block m-0">{title},&nbsp;</h3><p className="d-inline-block m-0">{superText}</p></>
@@ -203,36 +210,42 @@ function Homepage(props) {
   const closeModal = () => {
     setModalDataKey(undefined)
   }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPageLoaded(true)
+    }, 200)
+    return () => clearTimeout(timer)
+  }, [])
   
   return (
-    <BlackBG>
-      <Slide bottom duration={500}>
-        <WhiteBG>
-          <Hero {...heroProject}/>
-          <About />
+    <>
+      <BlackBG hide={pageLoaded}/>
+      <WhiteBG>
+        <Hero {...heroProject}/>
+        <About />
+        {
+          mainProjects.map(project => (
+            <Project {...project} id={project.key}/>
+          ))
+        }
+        <Small>
           {
-            mainProjects.map(project => (
+            carouselProjects.map(project => (
               <Project {...project} id={project.key}/>
             ))
           }
-          <Small>
-            {
-              carouselProjects.map(project => (
-                <Project {...project} id={project.key}/>
-              ))
-            }
-          </Small>
-          <MediumAndAbove>
-            <ProjectCarousel projects={carouselProjects}/>
-          </MediumAndAbove>
-          <Education />
-          <Skills />
-          <Contact/>
-          <Footer/>
-        </WhiteBG>
-        <InfoModal open={Boolean(modalDataKey)} onClose={closeModal} title={modalTitle} body={body}/>
-      </Slide>
-    </BlackBG>
+        </Small>
+        <MediumAndAbove>
+          <ProjectCarousel projects={carouselProjects}/>
+        </MediumAndAbove>
+        <Education />
+        <Skills />
+        <Contact/>
+        <Footer/>
+      </WhiteBG>
+      <InfoModal open={Boolean(modalDataKey)} onClose={closeModal} title={modalTitle} body={body} />
+    </>
   )
 }
 

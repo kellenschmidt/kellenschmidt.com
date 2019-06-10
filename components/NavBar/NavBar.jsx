@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-scroll'
 import { Container, Row, Col } from 'reactstrap'
-import Fade from 'react-reveal/Fade'
 import { MediumAndBelow, LargeAndAbove } from '../responsiveTags'
 import { FaLinkedin, FaFilePdf, FaBars } from "react-icons/fa";
 
@@ -107,19 +106,17 @@ function NavBar(props) {
       <Container>
         <HeaderRow>
           <MyCol>
-            <Fade duration={500} delay={500}>
-              <LogoTitle>Kellen Schmidt</LogoTitle>
-              <LargeAndAbove>
-                <NavLink to="about" smooth={true} duration={750} offset={-320}>About</NavLink>
-                <NavLink to="url-shortener" smooth={true} duration={750} offset={-260}>Experience/Projects</NavLink>
-                <NavLink to="education" smooth={true} duration={750} offset={-350}>Education</NavLink>
-                <NavLink to="skills" smooth={true} duration={750} offset={-300}>Skills</NavLink>
-                <NavLink to="contact" smooth={true} duration={750}>Contact</NavLink>
-              </LargeAndAbove>
-              <MediumAndBelow>
-                <NavToggle open={mobileNavOpen} onClick={toggleNav}><FaBars/></NavToggle>
-              </MediumAndBelow>
-            </Fade>
+            <LogoTitle>Kellen Schmidt</LogoTitle>
+            <LargeAndAbove>
+              <NavLink to="about" smooth={true} duration={750} offset={-320}>About</NavLink>
+              <NavLink to="url-shortener" smooth={true} duration={750} offset={-260}>Experience/Projects</NavLink>
+              <NavLink to="education" smooth={true} duration={750} offset={-350}>Education</NavLink>
+              <NavLink to="skills" smooth={true} duration={750} offset={-300}>Skills</NavLink>
+              <NavLink to="contact" smooth={true} duration={750}>Contact</NavLink>
+            </LargeAndAbove>
+            <MediumAndBelow>
+              <NavToggle open={mobileNavOpen} onClick={toggleNav}><FaBars/></NavToggle>
+            </MediumAndBelow>
           </MyCol>
         </HeaderRow>
       </Container>
