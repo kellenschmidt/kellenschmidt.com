@@ -131,7 +131,7 @@ function Project(props) {
             <Motion style={{ x: spring(revealed ? 0 : 1) }}>
               {({ x }) => (
                 <MockImg src={props.image} alt={`${props.titleText} mockup`} style={{
-                  transform: `translateX(${x*200}px)`,
+                  transform: `translateX(${ props.reverse ? -x*200 : x*200 }px)`,
                   opacity: 1-x,
                 }} />
               )}
