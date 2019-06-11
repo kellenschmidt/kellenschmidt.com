@@ -102,7 +102,7 @@ function Project(props) {
   const handleReveal = () => {
     const timer = setTimeout(() => {
       setRevealed(true)
-    }, 750)
+    }, 1000)
     
     return () => clearTimeout(timer)
   }
