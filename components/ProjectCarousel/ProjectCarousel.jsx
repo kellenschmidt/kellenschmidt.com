@@ -54,7 +54,7 @@ function ProjectCarousel(props) {
         {
           props.projects.map((project, idx) => (
             <MyCol xs={selected === idx ? 8 : selected === -1 ? 4 : 2} onClick={() => setSelected(idx)} key={project.key}>
-              <Fade bottom delay={idx * 150} duration={750}>
+              <Fade bottom delay={idx * 150} duration={750} distance="50%">
                 <Row>
                   <MyCol xs={{ size: selected === idx ? 12 : 12}} className="mx-auto">
                     <GrowHover selected={selected === idx}>

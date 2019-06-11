@@ -2,17 +2,15 @@ import React, { useState, useEffect } from 'react'
 import Head from 'next/head';
 import Homepage from '../components/Homepage/Homepage'
 import { Context as ResponsiveContext } from 'react-responsive'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import fonts from '../lib/fonts'
 import config from 'react-reveal/globals';
 
-const mapStateToProps = (state) => {
-  return {
-    fakeWidth: state.responsive.fakeWidth
-  }
-}
-
 const Index = (props) => {
+  const { fakeWidth } = useSelector(state => ({
+    ...state.responsive
+  }));
+
   function useWindowSize() {
     const isClient = typeof window === 'object';
 
@@ -58,11 +56,11 @@ const Index = (props) => {
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
         <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin/>
       </Head>
-      <ResponsiveContext.Provider value={{ width: size.width || props.fakeWidth || 500 }}>
+      <ResponsiveContext.Provider value={{ width: size.width || fakeWidth || 500 }}>
         <Homepage/>
       </ResponsiveContext.Provider>
     </>
   )
 }
 
-export default connect(mapStateToProps)(Index)
+export default Index
