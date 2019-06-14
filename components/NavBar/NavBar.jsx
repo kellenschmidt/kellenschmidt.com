@@ -11,9 +11,6 @@ const LogoTitle = styled.h3`
   color: white;
 `
 const NavLink = styled(Link)`
-  display: inline-block;
-  margin: 0 1rem;
-  padding: 0 .75rem;
   color: white !important;
   font-weight: 600;
   transition: transform 100ms ease-in-out;
@@ -108,7 +105,7 @@ function NavBar(props) {
           <MyCol>
             <LogoTitle>Kellen Schmidt</LogoTitle>
             <LargeAndAbove>
-              <NavLink to="about" smooth={true} duration={750} offset={-320}>About</NavLink>
+              <NavLink to="about" smooth={true} duration={750} offset={-320} style={{ marginLeft: '10rem' }}>About</NavLink>
               <NavLink to="url-shortener" smooth={true} duration={750} offset={-260}>Experience/Projects</NavLink>
               <NavLink to="education" smooth={true} duration={750} offset={-350}>Education</NavLink>
               <NavLink to="skills" smooth={true} duration={750} offset={-300}>Skills</NavLink>
