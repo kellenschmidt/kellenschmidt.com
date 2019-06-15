@@ -36,6 +36,8 @@ const HeroImgRow = styled(Row)`
 `
 const TitleSuper = styled(TitleSuperI)`
   color: rgba(251,253,255,.8);
+  font-size: 1.625rem;
+  line-height: 1.625rem;
 `
 const Title = styled(TitleI)`
   font-size: 2.875rem;

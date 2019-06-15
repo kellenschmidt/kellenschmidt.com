@@ -3,7 +3,7 @@ import styled, { withTheme } from 'styled-components'
 import About from '../About/About';
 import Project from '../Project/Project';
 import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
-import Education from '../Education/Education';
+// import Education from '../Education/Education';
 import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 import Skills from '../Skills/Skills';
@@ -27,6 +27,7 @@ const PreloadBg = styled.div`
     height: 100vh;
     opacity: ${ ({ hide }) => hide ? 0 : 1 };
     transition-property: opacity;
+    pointer-events: none;
   `}
 `
 const WhiteBG = styled.div`
@@ -188,9 +189,9 @@ function Homepage(props) {
 
   const heroProject = {
     key: "hero",
-    superText: "Hey there, welcome",
-    titleText: "This is Kellen Schmidt's personal website",
-    subText: "I'm a software engineer with an interest in full-stack web development. Check out my awesome projects and work experience!",
+    superText: "I'm a software engineer,",
+    titleText: <span>And full-stack web development is my drive.</span>,
+    subText: <span>Currently you'll find me building the future at <a href="https://www.credera.com/" style={{color: 'white'}}>Credera</a> in Dallas, TX. Check out my awesome projects and work experience!</span>,
     primaryButton: {
       onClick: () => window.open('https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf', '_blank'),
       text: "Resumé",
@@ -243,7 +244,7 @@ function Homepage(props) {
         <MediumAndAbove>
           <ProjectCarousel projects={carouselProjects}/>
         </MediumAndAbove>
-        <Education />
+        {/* <Education /> */}
         <Skills />
         <Contact/>
         <Footer/>

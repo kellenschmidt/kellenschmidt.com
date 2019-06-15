@@ -15,7 +15,7 @@ const Title = styled(TitleImp)`
   `}
 `
 const TitleSub = styled(TitleSubImp)`
-  padding: 0 2rem;
+  padding: 0 8rem;
   font-size: 1.25rem;
   ${({ theme }) => theme.breakpoints.md`
     padding: 0rem;
@@ -41,9 +41,9 @@ function About(props) {
           <Col xs={12}>
             <Fade bottom cascade delay={150} duration={750}>
               <div>
-                <Title>I am a software developer with a <Highlight>passion</Highlight> for learning and a <Highlight>curiosity</Highlight> with technology.</Title>
+                <Title>Always seeking new challenges I'm marked by <Highlight>passion</Highlight> for learning and <Highlight>curiosity</Highlight> with technology.</Title>
                 <TitleSub>
-                  <LargeAndAbove>I love problem solving and am constantly seeking new ways to grow and be challenged. I am a self-motivated learner and am always excited to learn new technologies as is evident by my multitude of awesome personal projects which this website serves to showcase.</LargeAndAbove>
+                  <LargeAndAbove>I love problem solving and am constantly seeking new ways to grow. I am a self-motivated learner and am always excited to explore new technologies as is evident by my multitude of awesome personal and professional projects which this website showcases.</LargeAndAbove>
                 </TitleSub>
               </div>
             </Fade>
