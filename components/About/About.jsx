@@ -41,7 +41,7 @@ function About(props) {
           <Col xs={12}>
             <Fade bottom cascade delay={150} duration={750}>
               <div>
-                <Title>Always seeking new challenges I'm marked by <Highlight>passion</Highlight> for learning and <Highlight>curiosity</Highlight> with technology.</Title>
+                <Title>Always seeking new challenges, I'm marked by <Highlight>passion</Highlight> for learning and <Highlight>curiosity</Highlight> with technology.</Title>
                 <TitleSub>
                   <LargeAndAbove>I love problem solving and am constantly seeking new ways to grow. I am a self-motivated learner and am always excited to explore new technologies as is evident by my multitude of awesome personal and professional projects which this website showcases.</LargeAndAbove>
                 </TitleSub>

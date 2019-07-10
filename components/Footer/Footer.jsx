@@ -85,6 +85,9 @@ function Footer() {
           <Col xs={12}>
             &copy; 2019 Kellen Schmidt<span className="mx-2">&#124;</span>Version {version || "0"}
           </Col>
+          <Col xs={12}>
+            Design inspired by <a href="https://elementsixdesign.com" target="_blank" rel="noopener noreferrer" style={{color: 'inherit'}}>Element Six Design</a>
+          </Col>
         </CopyrightRow>
       </Container>
     </Background>

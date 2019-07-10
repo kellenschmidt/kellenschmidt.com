@@ -1,12 +1,19 @@
 {
   "name": "kellenschmidt.com",
   "version": "0.1.0",
+  "description": "Redesigned personal portfolio website implemented using React, Redux, and Next.js",
+  "author": "Kellen Schmidt",
+  "homepage": "https://github.com/kellenschmidt/kellenschmidt.com#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kellenschmidt/kellenschmidt.com.git"
+  },
   "private": true,
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "bootstrap": "^4.3.1",
     "fontfaceobserver": "^2.1.0",
-    "next": "^8.1.0",
+    "next": "^9.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

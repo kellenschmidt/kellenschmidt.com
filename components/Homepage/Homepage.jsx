@@ -191,7 +191,7 @@ function Homepage(props) {
     key: "hero",
     superText: "I'm a software engineer,",
     titleText: <span>And full-stack web development is my drive.</span>,
-    subText: <span>Currently you'll find me building the future at <a href="https://www.credera.com/" style={{color: 'white'}}>Credera</a> in Dallas, TX. Check out my awesome projects and work experience!</span>,
+    subText: <span>Currently you'll find me building the future at <a href="https://www.credera.com/" target="_blank" rel="noopener noreferrer" style={{color: 'white'}}>Credera</a> in Dallas, TX. Check out my awesome projects and work experience!</span>,
     primaryButton: {
       onClick: () => window.open('https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf', '_blank'),
       text: "Resumé",

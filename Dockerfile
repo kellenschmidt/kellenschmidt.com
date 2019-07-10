@@ -3,7 +3,7 @@
 # docker build --build-arg APP_VERSION=v1 -t personal-website .
 # docker run -p 80:80 -d personal-website
 
-FROM node:10-alpine as build-stage
+FROM node:12-alpine as build-stage
 ARG APP_VERSION
 RUN mkdir /app
 WORKDIR /app
