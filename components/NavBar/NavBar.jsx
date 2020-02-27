@@ -90,7 +90,7 @@ function NavBar(props) {
             <Col>
               <MobileNavLink to="about" smooth={true} duration={750} offset={-120} onClick={toggleNav}>About</MobileNavLink>
               <MobileNavLink to="url-shortener" smooth={true} duration={750} offset={-40} onClick={toggleNav}>Experience / Projects</MobileNavLink>
-              <MobileNavLink to="education" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Education</MobileNavLink>
+              {/* <MobileNavLink to="education" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Education</MobileNavLink> */}
               <MobileNavLink to="skills" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Skills</MobileNavLink>
               <MobileNavLink to="contact" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Contact</MobileNavLink>
               <ColorBar />
@@ -107,7 +107,7 @@ function NavBar(props) {
             <LargeAndAbove>
               <NavLink to="about" smooth={true} duration={750} offset={-320} style={{ marginLeft: '10rem' }}>About</NavLink>
               <NavLink to="url-shortener" smooth={true} duration={750} offset={-260}>Experience/Projects</NavLink>
-              <NavLink to="education" smooth={true} duration={750} offset={-350}>Education</NavLink>
+              {/* <NavLink to="education" smooth={true} duration={750} offset={-350}>Education</NavLink> */}
               <NavLink to="skills" smooth={true} duration={750} offset={-300}>Skills</NavLink>
               <NavLink to="contact" smooth={true} duration={750}>Contact</NavLink>
             </LargeAndAbove>
