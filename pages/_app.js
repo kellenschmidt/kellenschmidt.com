@@ -1,4 +1,4 @@
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import React from 'react'
 import { ThemeProvider, createGlobalStyle, css } from 'styled-components'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -98,47 +98,47 @@ const sizes = {
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Thin.woff2);
+    src: url(/Gilroy-Thin.woff2);
     font-weight: 100;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-UltraLight.woff2);
+    src: url(/Gilroy-UltraLight.woff2);
     font-weight: 200;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Light.woff2);
+    src: url(/Gilroy-Light.woff2);
     font-weight: 300;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Regular.woff2);
+    src: url(/Gilroy-Regular.woff2);
     font-weight: 400;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Medium.woff2);
+    src: url(/Gilroy-Medium.woff2);
     font-weight: 500;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-SemiBold.woff2);
+    src: url(/Gilroy-SemiBold.woff2);
     font-weight: 600;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Bold.woff2);
+    src: url(/Gilroy-Bold.woff2);
     font-weight: 700;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-ExtraBold.woff2);
+    src: url(/Gilroy-ExtraBold.woff2);
     font-weight: 800;
   }
   @font-face {
     font-family: Gilroy;
-    src: url(/static/Gilroy-Heavy.woff2);
+    src: url(/Gilroy-Heavy.woff2);
     font-weight: 900;
   }
 
@@ -188,16 +188,14 @@ class MyApp extends App {
     }
     
     return (
-      <Container>
-        <Provider store={reduxStore}>
-          <ThemeProvider theme={theme}>
-            <>
-              <GlobalStyle/>
-              <Component {...pageProps} />
-            </>
-          </ThemeProvider>
-        </Provider>
-      </Container>
+      <Provider store={reduxStore}>
+        <ThemeProvider theme={theme}>
+          <>
+            <GlobalStyle/>
+            <Component {...pageProps} />
+          </>
+        </ThemeProvider>
+      </Provider>
     )
   }
 }

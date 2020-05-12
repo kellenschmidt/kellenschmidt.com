@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": "kellenforthe.win",
+  "alias": "kellenschmidt.com",
   "builds": [
     {
       "src": "package.json",

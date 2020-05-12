@@ -43,10 +43,6 @@ function Homepage(props) {
       titleText: "URL Shortener",
       subText: "Take long URLs and compress them into short links which are easy to share, tweet, email! Created entirely from scratch as a personal project.",
       primaryButton: {
-        onClick: () => window.open('https://kellenschmidt.com/url', '_blank'),
-        text: "Try it out",
-      },
-      secondaryButton: {
         onClick: () => setModalDataKey("url-shortener"),
         text: "Learn More",
       },
