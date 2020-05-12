@@ -28,11 +28,6 @@ const CopyrightRow = styled(Row)`
   opacity: .55;
   padding: 2rem 0 4rem;
 `
-const MinesweeperHeader = styled(FooterHeader)`
-  &:hover {
-    cursor: pointer;
-  }
-`
 const Background = styled.div`
   background-color: rgba(48,53,70,.05);
   padding-top: 8rem;
@@ -49,7 +44,7 @@ function Footer() {
           </Col>
           <Col md={{ size: 3, offset: 1 }} xs={6}>
             <FooterHeader>Links</FooterHeader>
-            <FooterLink href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer">Resumé</FooterLink>
+            <FooterLink href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</FooterLink>
             <FooterLink href="https://github.com/kellenschmidt" target="_blank" rel="noopener noreferrer">GitHub</FooterLink>
             <FooterLink href="https://linkedin.com/in/kellens" target="_blank" rel="noopener noreferrer">LinkedIn</FooterLink>
           </Col>

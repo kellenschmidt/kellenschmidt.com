@@ -1,156 +1,69 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Container, Row, Col } from 'reactstrap'
 import { Element } from 'react-scroll'
-import SkillGroup from './SkillGroup'
+import SkillBox from './SkillBox'
 
 const skillGroups = [
   {
-    title: "Frontend Web Dev",
-    skills: [
-      {
-        name: "React",
-        image: "react",
-        score: 90,
-      },
-      {
-        name: "Angular",
-        image: "angular",
-        score: 70,
-      },
-      {
-        name: "Vue",
-        image: "vuejs",
-        score: 50,
-      },
-      {
-        name: "Redux",
-        image: "redux",
-        score: 80,
-      },
-      {
-        name: "Javascript ES6+",
-        image: "javascript1",
-        score: 75,
-      },
-    ],
+    title: "Frontend Javascript Frameworks",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_80/react-skill",
+    languages: ["React", "Vue.js", "Angular 9"]
   },
   {
-    title: "Backend Web Dev",
-    skills: [
-      {
-        name: "GraphQL",
-        image: "graphql",
-        score: 60,
-      },
-      {
-        name: "Node.js",
-        image: "nodejs1",
-        score: 80,
-      },
-      {
-        name: "Express",
-        image: "express",
-        score: 80,
-      },
-      {
-        name: "MySQL",
-        image: "mysql",
-        score: 75,
-      },
-      {
-        name: "Mongo",
-        image: "mongodb",
-        score: 55,
-      },
-    ],
+    title: "Backend Frameworks",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_80/nodejs-skill",
+    languages: ["Node.js", "Spring"]
   },
   {
-    title: "Dev Ops",
-    skills: [
-      {
-        name: "Docker",
-        image: "docker1",
-        score: 80,
-      },
-      {
-        name: "Kubernetes",
-        image: "kubernetes",
-        score: 65,
-      },
-      {
-        name: "AWS/GCP/Azure",
-        image: "aws",
-        score: 70,
-      },
-      {
-        name: "CI/CD",
-        image: "jenkins",
-        score: 75,
-      },
-    ],
+    title: "Web Design & Development",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_80/html-skill",
+    languages: ["HTML", "CSS", "Javscript (ES6+)"]
   },
   {
-    title: "Other",
-    skills: [
-      {
-        name: "Python/C++/Java",
-        image: "cplusplus",
-        score: 75,
-      },
-      {
-        name: "Github",
-        image: "github",
-        score: 85,
-      },
-      {
-        name: "Scrum",
-        image: "scrum",
-        score: 80,
-      },
-      {
-        name: "Bash",
-        image: "bash",
-        score: 70,
-      },
-    ],
+    title: "DevOps",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_80/docker-skill",
+    languages: ["Docker", "Kubernetes", "CI/CD"]
   },
+  {
+    title: "Cloud",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_80/aws-skill",
+    languages: ["AWS", "Azure", "GCP"]
+  },
+  {
+    title: "Databases",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_80/database-skill",
+    languages: ["PostgreSQL", "MySQL", "NoSQL"]
+  },
+  // {
+  //   title: "Other",
+  //   image: "https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_80/git-skill",
+  //   languages: ["GraphQL", "GitHub", "Shell scripting"]
+  // },
 ]
 
-const MyContainer = styled(Container)`
-  position: relative;
-  height: 50vh;
-  top: 0;
+const SkillsTitle = styled.p`
+  font-weight: 700;
+  color: hsla(226.36363636363637,18.64%,23.14%,1);
+  font-size: 2.625rem;
+  line-height: 3.125rem;
+  text-align: center;
+  margin-bottom: 2rem;
 `
 
 function Skills(props) {
-  const [current, setCurrent] = useState(null)
-  const [previous, setPrevious] = useState(null)
-
-  const setOpen = (idx) => {
-    setPrevious(current)
-    setCurrent(idx)
-  }
-  
   return (
     <Element name="skills">
-      <MyContainer>
-        {
-          skillGroups.map((group, idx) => (
-            <Row key={group.title}>
-              <Col xs={12} className="position-static">
-                <SkillGroup 
-                  index={idx}
-                  open={current === idx} 
-                  high={current === idx || previous === idx}
-                  setOpen={() => setOpen(current === idx ? null : idx)}
-                  skillData={group}
-                  key={group.title}/>
-              </Col>
-            </Row>
-          ))
-        }
-      </MyContainer>
+      <Container>
+        <SkillsTitle>Skills</SkillsTitle>
+        <Row>
+          {skillGroups.map(group => (
+            <Col xs={12} md={6} xl={4} key="group.title">
+              <SkillBox title={group.title} image={group.image} languages={group.languages}/>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </Element>
   );
 }

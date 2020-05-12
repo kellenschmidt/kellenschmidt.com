@@ -18,8 +18,8 @@ const MyCol = styled(Col)`
 const OuterRow = styled(Row)`
   align-items: baseline;
   display: flex;
-  margin-bottom: ${({ selected}) => selected ? "30rem" : "5rem"};
-  height: 50vh;
+  margin-bottom: ${({ selected}) => selected ? "30rem" : "3rem"};
+  height: 30rem;
   justify-content: between;
   transition: margin-bottom 1s ease-in-out;
 `
@@ -51,33 +51,31 @@ function ProjectCarousel(props) {
         </Fade>
       </Fade>
       <OuterRow selected={selected !== -1}>
-        {
-          props.projects.map((project, idx) => (
-            <MyCol xs={selected === idx ? 8 : selected === -1 ? 4 : 2} onClick={() => setSelected(idx)} key={project.key}>
-              <Fade bottom delay={idx * 150} duration={750} distance="50%">
-                <Row>
-                  <MyCol xs={{ size: selected === idx ? 12 : 12}} className="mx-auto">
-                    <GrowHover selected={selected === idx}>
-                      <MockImg src={project.image} alt="Project mockup" />
-                      <Fade opposite when={selected !== idx} duration={300} delay={selected === idx ? 0 : 1000}>
-                        <ItemTitle selectedIdx={selected} selected={selected === idx}>{project.titleText}</ItemTitle>
-                      </Fade>
-                    </GrowHover>
-                  </MyCol>
-                  <MyCol xs={selected === idx ? 12 : 0}>
-                    <Fade opposite when={selected === idx} duration={300} delay={selected === idx ? 1000 : 0}>
-                      <CenterLine color={project.color}/>
-                      <TitleSuper>{project.superText}</TitleSuper>
-                      <Title>{project.titleText}</Title>
-                      <TitleSub>{project.subText}</TitleSub>
-                      <SecondaryButton color={project.color} onClick={project.primaryButton.onClick}>{project.primaryButton.text}</SecondaryButton>
+        {props.projects.map((project, idx) => (
+          <MyCol xs={selected === idx ? 8 : selected === -1 ? 4 : 2} onClick={() => setSelected(idx)} key={project.key}>
+            <Fade bottom delay={idx * 150} duration={750} distance="50%">
+              <Row>
+                <MyCol xs={{ size: selected === idx ? 12 : 12}} className="mx-auto">
+                  <GrowHover selected={selected === idx}>
+                    <MockImg src={project.image} alt="Project mockup" />
+                    <Fade opposite when={selected !== idx} duration={300} delay={selected === idx ? 0 : 1000}>
+                      <ItemTitle selectedIdx={selected} selected={selected === idx}>{project.titleText}</ItemTitle>
                     </Fade>
-                  </MyCol>
-                </Row>
-              </Fade>
-            </MyCol>
-          ))
-        }
+                  </GrowHover>
+                </MyCol>
+                <MyCol xs={selected === idx ? 12 : 0}>
+                  <Fade opposite when={selected === idx} duration={300} delay={selected === idx ? 1000 : 0}>
+                    <CenterLine color={project.color}/>
+                    <TitleSuper>{project.superText}</TitleSuper>
+                    <Title>{project.titleText}</Title>
+                    <TitleSub>{project.subText}</TitleSub>
+                    <SecondaryButton color={project.color} onClick={project.primaryButton.onClick}>{project.primaryButton.text}</SecondaryButton>
+                  </Fade>
+                </MyCol>
+              </Row>
+            </Fade>
+          </MyCol>
+        ))}
       </OuterRow>
     </Container>
   );

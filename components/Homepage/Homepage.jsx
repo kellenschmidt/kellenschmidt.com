@@ -190,7 +190,7 @@ function Homepage(props) {
     subText: <span>Currently you'll find me building the future at <a href="https://www.credera.com/" target="_blank" rel="noopener noreferrer" style={{color: 'white'}}>Credera</a> in Dallas, TX. Check out my awesome projects and work experience!</span>,
     primaryButton: {
       onClick: () => window.open('https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf', '_blank'),
-      text: "Resumé",
+      text: "Resume",
     },
     secondaryButton: {
       onClick: () => scroller.scrollTo('contact', {
@@ -225,17 +225,13 @@ function Homepage(props) {
       <WhiteBG>
         <Hero {...heroProject}/>
         <About />
-        {
-          mainProjects.map(project => (
-            <Project {...project} id={project.key}/>
-          ))
-        }
+        {mainProjects.map(project => (
+          <Project {...project} id={project.key}/>
+        ))}
         <Small>
-          {
-            carouselProjects.map(project => (
-              <Project {...project} id={project.key}/>
-            ))
-          }
+          {carouselProjects.map(project => (
+            <Project {...project} id={project.key}/>
+          ))}
         </Small>
         <MediumAndAbove>
           <ProjectCarousel projects={carouselProjects}/>
