@@ -4,6 +4,7 @@ import About from '../About/About';
 import Project from '../Project/Project';
 import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 // import Education from '../Education/Education';
+import Experience from '../Experience/Experience';
 import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 import Skills from '../Skills/Skills';
@@ -236,6 +237,7 @@ function Homepage(props) {
         <MediumAndAbove>
           <ProjectCarousel projects={carouselProjects}/>
         </MediumAndAbove>
+        <Experience/>
         {/* <Education /> */}
         <Skills />
         <Contact/>

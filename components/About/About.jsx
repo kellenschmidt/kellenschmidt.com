@@ -7,7 +7,6 @@ import { Title as TitleImp, TitleSub as TitleSubImp } from '../Project/Project'
 import { LargeAndAbove } from '../responsiveTags';
 
 const Title = styled(TitleImp)`
-  margin-bottom: 1rem;
   padding: 0 1rem;
   ${({ theme }) => theme.breakpoints.sm`
     font-size: 2rem;

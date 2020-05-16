@@ -58,7 +58,7 @@ function Skills(props) {
         <SkillsTitle>Skills</SkillsTitle>
         <Row>
           {skillGroups.map(group => (
-            <Col xs={12} md={6} xl={4} key="group.title">
+            <Col xs={12} md={6} xl={4} key={group.title}>
               <SkillBox title={group.title} image={group.image} languages={group.languages}/>
             </Col>
           ))}
