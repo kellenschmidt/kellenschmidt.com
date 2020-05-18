@@ -7,6 +7,9 @@ const SkillsWrapper = styled.div`
   padding: .25rem;
   margin-bottom: 1rem;
   border-radius: 8px;
+  ${({ theme }) => theme.breakpoints.md`
+    margin-bottom: 0.5rem;
+  `}
 `
 const SkillsGroup = styled.div`
   background: white;

@@ -7,7 +7,7 @@ import SkillBox from './SkillBox'
 const skillGroups = [
   {
     title: "Frontend Javascript Frameworks",
-    image: "https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_80/react-skill",
+    image: "https://res.cloudinary.com/kellenscloud/image/upload/c_scale,f_auto,q_auto,w_80/reactjs-skill",
     languages: ["React", "Vue.js", "Angular 9"]
   },
   {
@@ -49,6 +49,9 @@ const SkillsTitle = styled.p`
   line-height: 3.125rem;
   text-align: center;
   margin-bottom: 2rem;
+  ${({ theme }) => theme.breakpoints.md`
+    margin-bottom: 1rem;
+  `}
 `
 
 function Skills(props) {

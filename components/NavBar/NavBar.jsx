@@ -89,9 +89,10 @@ function NavBar(props) {
           <Row noGutters>
             <Col>
               <MobileNavLink to="about" smooth={true} duration={750} offset={-120} onClick={toggleNav}>About</MobileNavLink>
-              <MobileNavLink to="url-shortener" smooth={true} duration={750} offset={-40} onClick={toggleNav}>Experience / Projects</MobileNavLink>
+              <MobileNavLink to="url-shortener" smooth={true} duration={750} offset={-35} onClick={toggleNav}>Projects</MobileNavLink>
+              <MobileNavLink to="experience" smooth={true} duration={750} offset={-35} onClick={toggleNav}>Experience</MobileNavLink>
               {/* <MobileNavLink to="education" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Education</MobileNavLink> */}
-              <MobileNavLink to="skills" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Skills</MobileNavLink>
+              <MobileNavLink to="skills" smooth={true} duration={750} offset={-35} onClick={toggleNav}>Skills</MobileNavLink>
               <MobileNavLink to="contact" smooth={true} duration={750} offset={-160} onClick={toggleNav}>Contact</MobileNavLink>
               <ColorBar />
               <Icon href="https://linkedin.com/in/kellens" target="_blank" rel="noopener noreferrer" aria-label="Go to Kellen's Linkedin"><FaLinkedin/></Icon>
@@ -105,10 +106,11 @@ function NavBar(props) {
           <MyCol>
             <LogoTitle>Kellen Schmidt</LogoTitle>
             <LargeAndAbove>
-              <NavLink to="about" smooth={true} duration={750} offset={-320} style={{ marginLeft: '10rem' }}>About</NavLink>
-              <NavLink to="url-shortener" smooth={true} duration={750} offset={-260}>Experience/Projects</NavLink>
+              <NavLink to="about" smooth={true} duration={750} offset={-300} style={{ marginLeft: '10rem' }}>About</NavLink>
+              <NavLink to="url-shortener" smooth={true} duration={750} offset={-230}>Projects</NavLink>
+              <NavLink to="experience" smooth={true} duration={750} offset={-140}>Experience</NavLink>
               {/* <NavLink to="education" smooth={true} duration={750} offset={-350}>Education</NavLink> */}
-              <NavLink to="skills" smooth={true} duration={750} offset={-300}>Skills</NavLink>
+              <NavLink to="skills" smooth={true} duration={750} offset={-210}>Skills</NavLink>
               <NavLink to="contact" smooth={true} duration={750}>Contact</NavLink>
             </LargeAndAbove>
             <MediumAndBelow>

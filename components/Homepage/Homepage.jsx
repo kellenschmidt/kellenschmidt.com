@@ -229,14 +229,14 @@ function Homepage(props) {
         {mainProjects.map(project => (
           <Project {...project} id={project.key}/>
         ))}
-        <Small>
+        {/* <Small>
           {carouselProjects.map(project => (
             <Project {...project} id={project.key}/>
           ))}
-        </Small>
-        <MediumAndAbove>
+        </Small> */}
+        {/* <MediumAndAbove>
           <ProjectCarousel projects={carouselProjects}/>
-        </MediumAndAbove>
+        </MediumAndAbove> */}
         <Experience/>
         {/* <Education /> */}
         <Skills />

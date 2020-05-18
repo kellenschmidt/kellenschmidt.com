@@ -7,9 +7,9 @@ import LazyImg from '../LazyImg/LazyImg'
 import { Motion, spring } from 'react-motion'
 
 export const MyContainer = styled(Container)`
-  margin-bottom: 15rem;
+  margin-bottom: 13.5rem;
   ${({ theme }) => theme.breakpoints.md`
-    margin-bottom: 10rem;
+    margin-bottom: 8rem;
   `}
 `
 export const BigRow = styled(Row)`

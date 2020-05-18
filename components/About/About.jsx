@@ -23,9 +23,9 @@ const TitleSub = styled(TitleSubImp)`
   `}
 `
 const LastRow = styled(Row)`
-  padding-bottom: 15rem;
+  padding-bottom: 13.5rem;
   ${({ theme }) => theme.breakpoints.md`
-    padding-bottom: 10rem;
+    padding-bottom: 8rem;
   `}
 `
 const Highlight = styled.span`

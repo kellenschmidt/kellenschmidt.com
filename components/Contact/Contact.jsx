@@ -11,7 +11,7 @@ const ColorContainer = styled(Container)`
   background-image: ${({ color, theme }) => `linear-gradient(45deg, ${theme.color[color].normal}, ${theme.color[color].light})`};
   padding-top: 5rem;
   padding-bottom: 5rem;
-  margin-top: 17rem;
+  margin-top: 15rem;
 
   ${({ theme }) => theme.breakpoints.md`
     margin-top: 10rem;

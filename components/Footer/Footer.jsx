@@ -31,6 +31,9 @@ const CopyrightRow = styled(Row)`
 const Background = styled.div`
   background-color: rgba(48,53,70,.05);
   padding-top: 8rem;
+  ${({ theme }) => theme.breakpoints.md`
+    padding-top: 6rem;
+  `}
 `
 
 function Footer() {
@@ -38,11 +41,11 @@ function Footer() {
     <Background>
       <Container>
         <Row>
-          <Col md={5} xs={6}>
+          <Col md={5} xs={7}>
             <FooterHeader>Thanks for visiting</FooterHeader>
             <FooterText>Learn more about me and check out my work at these links!</FooterText>
           </Col>
-          <Col md={{ size: 3, offset: 1 }} xs={6}>
+          <Col md={{ size: 3, offset: 1 }} xs={5}>
             <FooterHeader>Links</FooterHeader>
             <FooterLink href="https://res.cloudinary.com/kellenscloud/image/upload/Kellen_Schmidt_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</FooterLink>
             <FooterLink href="https://github.com/kellenschmidt" target="_blank" rel="noopener noreferrer">GitHub</FooterLink>
